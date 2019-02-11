@@ -1,0 +1,153 @@
+.loading {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  opacity: 1;
+
+  &.waiting, &.check {
+    .circle {
+      border-top-color: $color-primary;
+      border-right-color: $color-primary;
+      border-left-color: $color-primary;
+    }
+
+    .cover {
+      border-top-color: $color-primary;
+      border-right-color: $color-primary;
+      border-left-color: $color-primary;
+    }
+  }
+
+  &.check {
+    &:before {
+      content: '';
+      width: 23px;
+      height: 8px;
+      border-radius: 5px;
+      opacity: 0;
+      border: 4px solid $color-primary;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      z-index: 2;
+      @include box-sizing(unset);
+      @include transform(translate3d(-50%, -80%, 0) rotateZ(-50deg) skew(-10deg));
+      @include pos-abs($top: 50%, $left: 50%);
+    }
+  }
+
+  &.expired {
+    .circle {
+      border-top-color: $color-warning;
+      border-right-color: $color-warning;
+      border-left-color: $color-warning;
+      .cover {
+        border-top-color: $color-warning;
+        border-right-color: $color-warning;
+        border-left-color: $color-warning;
+      }
+
+      i.icon-close {
+        @include centerer;
+        color: $color-warning;
+        font-size: 18px;
+      }
+    }
+  }
+  .circle {
+    border-radius: 50%;
+    border-width: 3px;
+    border-style: solid;
+    border-bottom-color: transparent;
+    z-index: 5;
+    @include animation(circle 1s infinite linear);
+    @include pos-abs($top: -3px, $left: -3px, $right: -3px, $bottom: -3px);
+  }
+  .cover {
+    border-width: 3px;
+    border-style: solid;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    @include pos-abs($top: -3px, $left: -3px, $right: -3px, $bottom: -3px);
+  }
+  &.paused {
+    .circle {
+      animation-play-state: paused;
+    }
+    .cover {
+      transform: rotateZ(91deg);
+      @include animation(cover 1s);
+    }
+  }
+  &.success {
+    &:before {
+      opacity: 1;
+    }
+    &:after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 100px;
+      z-index: 2;
+      background-color: #fff;
+      @include animation(show .3s linear);
+      @include transform(translate3d(25%, -50%, 0));
+      @include pos-abs($top: 50%, $left: 50%);
+    }
+  }
+}
+
+.hidden-content {
+  text-align: center;
+  animation-delay: 0.8s;
+}
+
+@keyframes circle {
+  from{
+    @include transform(rotateZ(0deg));
+  }
+  to {
+    @include transform(rotateZ(360deg));
+  }
+}
+@keyframes show {
+  from {
+    @include transform(translate3d(-50%, -50%, 0));
+  }
+  to {
+    @include transform(translate3d(25%, -50%, 0));
+  }
+}
+@keyframes cover {
+  from {
+    @include transform(rotateZ(0));
+  }
+  to {
+    @include transform(rotateZ(91deg));
+  }
+}
+
+
+.progress-wrap {
+  margin: 50px 0;
+  > p {
+    margin-bottom: 10px;
+    span {  
+      font-weight: 600;
+    }
+  }
+}
+
+.progress {
+  height: 6px;
+  background: $color-light;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  span {
+    @include pos-abs($top: 0, $left: 0);
+    height: 6px;
+    background: $color-primary;
+    display: inline-block;
+    @include transition(.2s);
+  }
+}

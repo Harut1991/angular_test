@@ -1,0 +1,41 @@
+.steps {
+	padding: 20px 0;
+	@include bg-img($image: "how-it-works.png", $repeat: no-repeat, $size: contain, $position: center top);
+
+	.step {
+		min-height: 150px;
+
+		&:nth-child(even) {
+			.step-text {
+				margin-left: auto;
+			}
+		}
+
+		.step-text {
+			max-width: 450px;
+			width: 100%;
+
+			span {
+				display: inline-block;
+				font-size: 130px;
+				line-height: 90px;
+				font-weight: 900;
+				color: $color-light;
+			}
+
+			h5 {
+				margin-bottom: 15px;
+			}
+
+			p {
+				font-weight: 500;
+				font-size: $font-size-sm;
+				line-height: 18px;	
+			}
+		}
+
+		.bordered-img {
+			display: none;
+		}	
+	}
+}

@@ -1,0 +1,32 @@
+<!-- payment section -->
+      <h3 class="mb-8 pl-4">Select Items</h3>
+      <form class="payment-box">
+        <ul class="payment-list" style="max-height: 395px;">
+          <li  *ngFor="let sample of samples; let i = index">
+            <input [(ngModel)]="checkBoxes[sample.id]" (ngModelChange)="countPrice(i, sample.id)" [ngModelOptions]="{standalone: true}" type="checkbox"
+                   class="d-hide" id="sample-item-{{i}}"/>
+            <label for="sample-item-{{i}}">
+              <div>
+                <p class="mb-1 w-500">{{sample.name}}</p>
+                <p class="subtitle">{{sample.due_date | dateFormat}}</p>
+              </div>
+              <span class="price">
+                    {{sample.price}} $
+                  </span>
+            </label>
+          </li>
+        </ul>
+      </form>
+      <div class="text-center pt-6 pb-6" *ngIf="samples.length === 0">
+        <p class="w-900 color-text">
+          There are no reviews to pay.
+        </p>
+      </div>
+      <ng-container *ngIf="samples.length !== 0">
+        <p class="total text-right pr-7 mt-5">
+           <span>{{totalAmount}} $</span>
+        </p>
+      </ng-container>
+<!-- end payment section -->
+
+

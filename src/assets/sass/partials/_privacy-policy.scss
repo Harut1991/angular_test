@@ -1,0 +1,31 @@
+.privacy-policy-section {
+  .article {
+    li {
+      font-size: 14px;
+      line-height: 20px;
+      margin: 10px 0;
+
+      p {
+        margin: 10px 0 20px;
+      }
+
+      h4 {
+        margin: 50px 0 20px;
+      }
+
+      h5 {
+        margin: 25px 0 20px;
+        text-transform: capitalize;
+      }
+
+      a {
+        color: #0796dd;
+        font-size: 14px;
+
+        &:hover {
+          color: darken($color-primary, 10%);
+        }
+      }
+    }
+  }
+}

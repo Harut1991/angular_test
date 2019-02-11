@@ -1,0 +1,66 @@
+.editor-box {
+  text-align: left;
+  color: $color-white;
+  max-width: 100%;
+  max-height: 400px;
+  //.simplebar-content {
+  //  display: table-cell;
+  //}
+}
+/*perfect-scrollbar, [perfect-scrollbar] {
+  &.editor-box {
+    max-width: 100%;
+    max-height: 400px;
+  }
+}*/
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-link {
+  color: $color-white;
+}
+
+.hljs,
+.hljs-subst {
+  color: $color-white;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-name,
+.hljs-type,
+.hljs-attribute,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-built_in,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+  color: $color-primary-light;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+  color: $color-white;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-title,
+.hljs-section,
+.hljs-doctag,
+.hljs-type,
+.hljs-name,
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}

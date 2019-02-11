@@ -1,0 +1,24 @@
+/*perfect scrollbar styles*/
+.simplebar-track.simplebar-vertical {
+  right: -15px;
+
+  .simplebar-scrollbar {
+    &.simplebar-visible {
+      &:before {
+        background-color: $color-gray;
+        width: 3px;
+      }
+    }
+  }
+}
+
+.simplebar-content {
+  padding: 0 15px 0 20px !important;
+}
+
+//place
+.simplebar-track-right-0 {
+  .simplebar-track.simplebar-vertical {
+    right: 0;
+  }
+}

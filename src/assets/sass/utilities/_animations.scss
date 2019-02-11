@@ -1,0 +1,8 @@
+@include keyframes(animation-width) {
+  from {
+    width: 0;
+  }
+  to {
+    animation-play-state: paused;
+  }
+}

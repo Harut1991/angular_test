@@ -1,0 +1,11 @@
+<div [id]="id" class="popup cancel-upload-popup md mfp-with-anim mfp-hide">
+  <button title="Close (Esc)" type="button" class="mfp-close"></button>
+  <div class="popup-body">
+    <h4 class="mb-5">Cancel upload?</h4>
+    <h6>Your upload is not complete. Would you like to cancel the upload?</h6>
+    <div class="d-flex justify-end mt-10 popup-buttons">
+      <button class="btn btn-bordered btn-xs mr-3" (click)="cancelUploading()">CANCEL UPLOAD</button>
+      <button class="btn btn-primary btn-xs" (click)="continueUploading()">CONTINUE UPLOAD</button>
+    </div>
+  </div>
+</div>

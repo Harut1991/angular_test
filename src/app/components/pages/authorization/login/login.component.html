@@ -1,0 +1,38 @@
+<!-- login section -->
+<section class="section-bg section-padding-sm">
+  <div class="container cols-sm-2 justify-center">
+
+    <div class="col-md-s-8 col-sm-7 m-0 br-lg bg-white border register-form">
+      <div class="register-form-content">
+        <h3>Log in to your account</h3>
+        <form autocomplete="on" [formGroup]="form" (ngSubmit)="submitForm(form.value)" novalidate>
+          <!-- TODO - add class .has-error to .form-row for error message -->
+          <div class="form-row" toggleErrClass [formControlElement]="form.get('email')">
+            <input type="email" id="email" appFocus [labelId]="'email-label'" [form]="form.get('email')"
+                   formControlName="email" autocomplete="on"/>
+            <label for="email" id="email-label">Email</label>
+            <div class="error-msg" *ngFor="let error of validationMessages.email">
+              <p *ngIf="form.get('email').hasError(error.type)">{{error.message}}</p>
+            </div>
+          </div>
+          <div class="form-row" toggleErrClass [formControlElement]="form.get('password')">
+            <input type="password" id="password" appFocus [labelId]="'password-label'"
+                   formControlName="password" autocomplete="new-password"/>
+            <label for="password" id="password-label">Password</label>
+            <div class="error-msg" *ngFor="let error of validationMessages.password">
+              <p *ngIf="form.get('password').hasError(error.type)">{{error.message}}</p>
+            </div>
+          </div>
+          <div class="text-right reset-password">
+            <a routerLink="/forgot-password" class="btn-link">Forgot your password?</a>
+          </div>
+
+          <p class="error-text" [ngClass]="{'active': isLoginFailed}">{{errorMessage}}</p>
+
+          <button type="submit" class="btn btn-sm btn-primary">log in</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end login section -->

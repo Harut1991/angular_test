@@ -1,0 +1,16 @@
+@media (max-width: $screen-xs-max) {
+	footer {
+		.footer-content {
+			height: 483px;
+			padding: 30px 0;
+		}
+		.footer-menu {
+			@include dir-col;
+			padding-bottom: 25px;
+			a {
+				padding: 5px;
+				font-size: $font-size-base;
+			}
+		}
+	}
+}

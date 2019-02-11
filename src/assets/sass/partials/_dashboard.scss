@@ -1,0 +1,27 @@
+.under-bg-light {
+  &:before {
+    content: '';
+    background-color: $color-light-bg;
+    z-index: -1;
+    @include pos-abs($top: 0, $right: 0, $bottom: 0, $left: 0);
+  }
+}
+
+.nav-hr {
+  & > li {
+    & + li {
+      margin-left: 50px;
+
+      &:after {
+        content: '';
+        width: 1px;
+        height: 16px;
+        background-color: $color-gray-light;
+        @include pos-abs($top: 26px, $left: -25px);
+      }
+    }
+  }
+  &:after {
+    content: none;
+  }
+}

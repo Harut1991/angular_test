@@ -1,0 +1,63 @@
+<header>
+  <div [ngClass]="!isUserLoggedIn() ? 'container' : 'full-container'" class="d-flex justify-space-between align-center">
+    <div class="logo">
+      <a routerLink="/" class="hover-opacity"><img src="assets/images/svg/logo.svg" alt="kodeist logo"></a>
+    </div>
+    <button class="menu-btn" (click)="openMenu()">
+      <i class="icon-menu"></i>
+    </button>
+    <div class="header-menu d-flex" [ngClass]="menuIsOpened ? 'opened' : ''">
+        <ul class="nav-menu">
+          <li class="close-menu-btn text-right"><i class="icon-close" (click)="closeMenu()"></i></li>
+          <li><a routerLink="/how-it-works" routerLinkActive="active" (click)="closeMenu()">how it works</a></li>
+          <li><a routerLink="/demo" routerLinkActive="active" (click)="closeMenu()">demo</a></li>
+          <li><a routerLink="/pricing" routerLinkActive="active" (click)="closeMenu()">pricing</a></li>
+          <li><a routerLink="/blog/posts" [queryParams]="{page: 1}" routerLinkActive="active" (click)="closeMenu()">blog</a></li>
+          <li><a routerLink="/faq" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}"
+                  (click)="closeMenu()">faq</a></li>
+          <li><a routerLink="about-us" routerLinkActive="active" (click)="closeMenu()">about us</a></li>
+        </ul>
+        <ul class="d-flex align-center xs-menu-items menu">
+          <li *ngIf="!isUserLoggedIn()" class="sm-w-full">
+            <a routerLink="/login" routerLinkActive="active" class="btn-link w-900"
+               (click)="closeMenu()">log in</a>
+          </li>
+          <li *ngIf="!isUserLoggedIn()">
+            <a [routerLink]="['/sign-up']" routerLinkActive="active"
+               class="btn btn-xs btn-primary" (click)="closeMenuAndUpdateRoute()">sign up</a>
+          </li>
+          <li *ngIf="isUserLoggedIn() && isUserOnDashboard()" class="sample-btn">
+            <a routerLink="/payment" class="btn btn-xs btn-primary" (click)="closeMenu()">make payment</a>
+          </li>
+          <li *ngIf="isUserLoggedIn()" class="menu-list">
+          <!--<span class="notif-link">
+          <a class="hover-opacity d-inline-block"><i
+            class="icon-notification color-gray-light"></i> <span class="notif-count">3</span></a>
+          </span>-->
+            <ul class="dropdown">
+              <li class="dropdwon-btn">
+                <span class="img-rounded-xs d-inline-block">
+                 <!--<img src="assets/images/user.png" alt="user photo">-->
+                                  <i class="icon-user"></i>
+
+              </span>
+                <span class="user-name d-hide">{{userName}}</span>
+              </li>
+              <li class="dropdown-menu">
+                <ul>
+                  <li><a (click)="closeMenu()" routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Dashboard</a></li>
+                  <li><a routerLink="/edit-profile" (click)="closeMenu()" routerLinkActive="active">Edit profile</a></li>
+                  <li *ngIf="isUserLoggedIn()">
+                    <a (click)="logOut()">Log out</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <!--<a class="btn-link mr-5 w-900" routerLinkActive="active" (click)="closeMenu(); logOut()" >log out</a>-->
+        </ul>
+    </div>
+  </div>
+</header>
+
+<app-cancellation-popup [id]="'cancel-sample-upload-on-logout'" [cancelUpload]="cancelUploadAndLogout" [continueUpload]="continueUpload"></app-cancellation-popup>

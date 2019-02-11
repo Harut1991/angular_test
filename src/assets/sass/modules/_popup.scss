@@ -1,0 +1,250 @@
+.popup {
+  position: relative;
+  background: $color-white;
+  padding: 50px;
+  width: 100%;
+  max-width: 850px;
+  margin: 20px auto;
+  border-radius: $br-default;
+
+  &.sm {
+    max-width: 500px;
+    padding: 60px 60px 40px;
+  }
+
+  &.cancel-upload-popup {
+    &.md {
+      padding: 50px 40px 60px;
+      max-width: 550px;
+    }
+
+    button.mfp-close {
+      &:before {
+        font-size: 13px;
+        color: $color-light;
+      }
+
+      &:hover {
+        &:before {
+          color: $color-gray-light;
+        }
+      }
+    }
+
+    h6 {
+      max-width: 300px;
+      color: $color-highlight;
+    }
+  }
+}
+
+.mfp-container {
+  padding: 0 20px;
+
+  .mfp-close {
+    opacity: 1;
+    right: 10px;
+    top: 10px;
+
+    &:before {
+      content: unicode($icon-close);
+      font-family: $font-icons;
+      font-size: 20px;
+      color: $color-gray-light;
+      @include centerer();
+      @include transition(.3s ease);
+    }
+
+    &:hover:before {
+      color: $color-light;
+    }
+  }
+}
+
+.mfp-move-horizontal {
+  .mfp-with-anim {
+    opacity: 0;
+    @include transition(0.3s);
+    @include transform(translateX(-50px));
+  }
+
+  &.mfp-bg {
+    opacity: 0;
+    @include transition(0.3s);
+  }
+
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      @include transform(translateX(0));
+    }
+
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+
+  &.mfp-removing {
+    .mfp-with-anim {
+      @include transform(translateX(50px));
+      opacity: 0;
+    }
+
+    &.mfp-bg {
+      opacity: 0;
+    }
+  }
+}
+
+.uploading-popup {
+  @include pos-fixed($right: 100px,$bottom: 20px);
+  z-index: 1000;
+  width: 400px;
+
+  .uploading-popup-content {
+    background: $color-white;
+    border-radius: $br-default;
+    width: 100%;
+    @include box-shadow(0px 3px 10px 3px rgba(0, 0, 0, 0.2));
+
+    .minimize {
+      @include pos-abs($top: 13px, $right: 45px);
+      width: 34px;
+      height: 34px;
+      line-height: 34px;
+      font-size: 15px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(white, 0.5);
+      @include transition(.5s ease);
+      &:hover {
+        color: rgba(white, 0.8);
+      }
+
+      &.rotate {
+        @include rotate(180);
+      }
+    }
+
+    .uploading-elements {
+      padding: 0 15px 0 25px;
+      max-height: 305px;
+
+      li {
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(space-between);
+        position: relative;
+        padding: 13px 0;
+        border-bottom: 1px solid $color-extralight;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .file-name {
+          width: 50%;
+          font-size: $font-size-xs;
+        }
+
+        .progress {
+          margin-right: 45px;
+
+          &, span {
+            width: 100px;
+          }
+        }
+
+        .status {
+          @include flexbox;
+          @include align-items(center);
+          @include justify-content(center);
+          border: none;
+          background: none;
+          cursor: pointer;
+          height: 24px;
+          width: 32px;
+
+          &:after {
+            font-family: $font-icons;
+            font-size: 12px;
+            display: block;
+          }
+
+          &.check:after {
+            content: $icon-check;
+            color: rgba($color-primary, 0.8);
+            font-size: 12px;
+          }
+
+          &.warning:after {
+            content: $icon-warning;
+            color: rgba($color-warning, 0.8);
+            font-size: 17px;
+          }
+
+          &:hover {
+            &:after {
+              content: $icon-close;
+              color: rgba(30, 39, 46, 0.4);
+              font-size: 12px;
+            }
+          }
+        }
+
+        button.cancel-process {
+          border: none;
+          background: none;
+          cursor: pointer;
+          height: 24px;
+          width: 32px;
+
+          &:after {
+            content: $icon-close;
+            color: rgba(30, 39, 46, 0.8);
+            font-family: $font-icons;
+            font-size: 12px;
+            display: block;
+          }
+
+          &:hover {
+            &:after {
+              color: rgba(30, 39, 46, 0.4);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .title {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 20px;
+    background: $color-secondary;
+    color: white;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .close-btn {
+    @include pos-abs($top: 13px, $right: 14px);
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(white, 0.5);
+    @include transition(.3s ease);
+    &:hover {
+      color: rgba(white, 0.8);
+    }
+  }
+
+  &.open {
+    height: 55px;
+    overflow: hidden;
+  }
+}

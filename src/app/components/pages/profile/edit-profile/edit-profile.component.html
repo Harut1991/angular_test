@@ -1,0 +1,65 @@
+<!--edit profile page-->
+<section class="under-bg-light section-padding-sm">
+  <div class="container cols-sm-2 justify-center">
+    <div class="col-md-s-8 col-sm-7 m-0 br-lg bg-white border box-section">
+      <h3 class="text-center mb-10">Edit profile</h3>
+      <form [formGroup]="emailAndUserNameForm" novalidate class="mt-1">
+        <div class="form-row" toggleErrClass [formControlElement]="emailAndUserNameForm.get('user_name')">
+          <input formControlName="user_name" type="text" id="new-name" value="John Doe" appFocus [labelId]="'new-name-label'"/>
+          <label for="new-name" id="new-name-label">Full Name</label>
+          <div class="error-msg" *ngFor="let error of validationMessages.name">
+            <p *ngIf="emailAndUserNameForm.get('user_name').hasError(error.type)">{{error.message}}</p>
+          </div>
+        </div>
+        <div class="form-row" toggleErrClass [formControlElement]="emailAndUserNameForm.get('email')">
+          <input formControlName="email" type="email" id="new-email" value="john@gmail.com" appFocus [labelId]="'new-email-label'"/>
+          <label for="new-email" id="new-email-label">Email</label>
+          <div class="error-msg" *ngFor="let error of validationMessages.email">
+            <p *ngIf="emailAndUserNameForm.get('email').hasError(error.type)">{{error.message}}</p>
+          </div>
+        </div>
+        <a href="#edit-pass-popup" class="btn-link" data-effect="mfp-move-horizontal" appPopup>
+          <i class="icon-edit mr-1"></i>
+          Edit password
+        </a>
+      </form>
+      <div class="box-section-button">
+        <button type="submit" class="btn btn-sm btn-primary" (click)="editProfile(emailAndUserNameForm.value)" >save</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!--edit profile page-->
+
+<!-- edit password popup -->
+<div id="edit-pass-popup" class="popup cancel-upload-popup md mfp-with-anim mfp-hide">
+  <button title="Close (Esc)" type="button" class="mfp-close"></button>
+  <div class="popup-body">
+    <h4 class="mb-5">Edit password</h4>
+    <form [formGroup]="resetPasswordForm" (ngSubmit)="savePassword()" novalidate class="clear-after">
+      <div class="form-row" toggleErrClass [formControlElement]="resetPasswordForm.get('current_password')">
+        <input formControlName="current_password" type="password" id="old-pass" appFocus [labelId]="'old-pass-label'"/>
+        <label for="old-pass" id="old-pass-label">Old password</label>
+        <div class="error-msg" *ngFor="let error of validationMessages.old_password">
+          <p *ngIf="resetPasswordForm.get('current_password').hasError(error.type)">{{error.message}}</p>
+        </div>
+      </div>
+      <div class="form-row" toggleErrClass [formControlElement]="resetPasswordForm.get('password')">
+        <input formControlName="password" type="password" id="new-pass" appFocus [labelId]="'new-pass-label'"/>
+        <label for="new-pass" id="new-pass-label">New password</label>
+        <div class="error-msg" *ngFor="let error of validationMessages.password">
+          <p *ngIf="resetPasswordForm.get('password').hasError(error.type)">{{error.message}}</p>
+        </div>
+      </div>
+      <div class="form-row" toggleErrClass [formControlElement]="resetPasswordForm.get('reenter_password')">
+        <input formControlName="reenter_password" type="password" id="confirm-pass" appFocus [labelId]="'confirm-pass-label'"/>
+        <label for="confirm-pass" id="confirm-pass-label">Reenter password</label>
+        <div class="error-msg" *ngFor="let error of validationMessages.confirm_password">
+          <p *ngIf="resetPasswordForm.get('reenter_password').hasError(error.type)">{{error.message}}</p>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-sm btn-bordered mt-5 float-right">save</button>
+    </form>
+  </div>
+</div>
+<!-- edit password popup -->

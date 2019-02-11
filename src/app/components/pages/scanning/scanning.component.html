@@ -1,0 +1,53 @@
+<section class="section-padding scanning-result">
+	<div class="container">
+		<h2 class="text-center">Kodeist security scanner</h2>
+		<p class="bg-light-bg mt-6 p-3 br">
+			<i class="icon-link mr-2 color-primary w-700"></i>
+			<span class="w-500">{{domain}}</span>
+		</p>
+
+		<!-- Show when website is being scanned -->
+
+		<div class="progress-wrap">
+      <p>Web Server Scan</p>
+      <div *ngIf="!weServerScanHtml">
+        <p>Please wait... </p>
+        <div class="hidden-loader loading check">
+          <div class="circle">
+            <span class="cover"></span>
+          </div>
+        </div>
+      </div>
+		</div>
+    <div *ngIf="weServerScanHtml" [innerHTML]="weServerScanHtml"> </div>
+
+    <div class="progress-wrap">
+      <p>XSS Scan</p>
+      <div *ngIf="!xssScanHtml">
+        <p>Please wait... </p>
+        <div class="hidden-loader loading check">
+          <div class="circle">
+            <span class="cover"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="xssScanHtml" [innerHTML]="xssScanHtml"> </div>
+
+    <div class="progress-wrap">
+      <p>SQLi Scan</p>
+      <div *ngIf="!sqliScanHtml">
+        <p>Please wait... </p>
+        <div class="hidden-loader loading check">
+          <div class="circle">
+            <span class="cover"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="sqliScanHtml" [innerHTML]="sqliScanHtml"> </div>
+
+	</div>
+</section>

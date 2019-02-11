@@ -1,0 +1,66 @@
+<section class="section-padding bg-light-bg home-page-blog blogs">
+  <div class="container cols-lg">
+    <h3 class="text-center width-800">{{header}}</h3>
+    <section class="relative pt-5 blog-slider">
+      <!-- slider with frame -->
+      <div>
+        <!--please create ngif() for this paragraph-->
+        <p class="subtitle">Learn all the best practices and tricks of development, follow the latest trends and so much more.</p>
+        <!--please create ngif() for this paragraph-->
+        <ngx-slick class="carousel" #slickModal="slick-modal" [config]="{
+          slidesToShow: 3,
+          speed: 600,
+          swipeToSlide: true,
+          draggable: true,
+          slidesToScroll: 1,
+          lazyLoad: 'ondemand',
+          cssEase: 'ease-in-out',
+          prevArrow: '.blog-prev-btn',
+          nextArrow: '.blog-next-btn',
+          fade: false,
+          responsive: [
+                {
+                    breakpoint: 1023,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                 {
+                    breakpoint: 400,
+                    settings: {
+                        slidesToShow: 1,
+                        dots: true,
+                        prevArrow: false,
+                        nextArrow: false
+                    }
+                }
+            ]
+           }">
+          <div ngxSlickItem class="blog-item slide" *ngFor="let post of blogPosts">
+            <img [src]="post?.image" alt="">
+            <h5 class="blog-title">{{post.title}}</h5>
+            <!--<p class="author">by: {{post.author}}</p>-->
+            <div class="text" appEllipsis data-max-height="73" [innerHTML]="post.description | safeHtml"></div>
+            <p class="clear-after"><span class="date">{{post.date | dateFormat}}</span> <a [routerLink]="['/blog/post', post.id]" class="btn-link float-right">read
+              more</a></p>
+          </div>
+        </ngx-slick>
+        <button type="button" class="slick-btn slick-btn-next blog-next-btn">
+          <i class="icon-next"></i>
+        </button>
+        <button type="button" class="slick-btn slick-btn-prev blog-prev-btn">
+          <i class="icon-previous"></i>
+        </button>
+      </div>
+      <!-- end slider with frame -->
+    </section>
+  </div>
+</section>

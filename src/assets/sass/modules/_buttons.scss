@@ -1,0 +1,184 @@
+.btn {
+  display: inline-block;
+  text-align: center;
+  border-radius: $br-md;
+  font-size: $font-size-lg-s;
+  padding: 8px 20px;
+  position: relative;
+  font-weight: 700;
+  font-family: $font-primary;
+  min-height: 44px;
+  min-width: 220px;
+  background-color: transparent;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-transform: lowercase;
+  @include box-shadow(0px 2px 6px 0px rgba(0, 0, 0, 0.13));
+  @include transition(all $trns-duration);
+
+  &-sm {
+    min-width: 180px;
+  }
+
+  &-xs {
+    font-size: $font-size-sm;
+    min-width: 120px;
+    min-height: 35px;
+    padding: 7px 20px;
+  }
+
+  &-xxs {
+    font-size: $font-size-xs;
+    min-width: 107px;
+    min-height: 25px;
+    padding: 3px 20px;
+    line-height: 19px;
+  }
+
+  &-radius-lg {
+    border-radius: 12px
+  }
+
+  &-primary {
+    background-color: $color-primary;
+    color: $color-white;
+    border-color: darken($color-primary, 3%);
+
+    &:hover, &:focus {
+      @include box-shadow(0px 6px 20px 0px rgba(0, 0, 0, 0.19), 0px 8px 17px 0px rgba(0, 0, 0, 0.2));
+    }
+    &:active {
+      @include box-shadow(0px 7px 21px 0px rgba(0, 0, 0, 0.19), 0px 9px 18px 0px rgba(0, 0, 0, 0.2));
+    }
+  }
+
+  &-white {
+    background-color: $color-white;
+    color: $color-primary;
+    border-color: $color-white;
+
+    &:hover, &:focus {
+      @include box-shadow(0px 6px 20px 0px rgba(0, 0, 0, 0.19), 0px 8px 17px 0px rgba(0, 0, 0, 0.2));
+    }
+    &:active {
+      @include box-shadow(0px 7px 21px 0px rgba(0, 0, 0, 0.19), 0px 9px 18px 0px rgba(0, 0, 0, 0.2));
+    }
+  }
+
+  &-bordered {
+    background-color: $color-white;
+    color: $color-primary;
+    border-color: $color-primary;
+
+    &:hover, &:focus {
+      @include box-shadow(0px 6px 20px 0px rgba(0, 0, 0, 0.19), 0px 8px 17px 0px rgba(0, 0, 0, 0.2));
+    }
+    &:active {
+      @include box-shadow(0px 7px 21px 0px rgba(0, 0, 0, 0.19), 0px 9px 18px 0px rgba(0, 0, 0, 0.2));
+    }
+  }
+
+  &-bordered-white {
+    background-color: transparent;
+    color: $color-white;
+    border-color: $color-white;
+
+    &:hover, &:focus {
+      @include box-shadow(0px 6px 20px 0px rgba(0, 0, 0, 0.19), 0px 8px 17px 0px rgba(0, 0, 0, 0.2));
+    }
+    &:active {
+      @include box-shadow(0px 7px 21px 0px rgba(0, 0, 0, 0.19), 0px 9px 18px 0px rgba(0, 0, 0, 0.2));
+    }
+  }
+
+  &-link {
+    color: $color-primary;
+    font-size: $font-size-sm;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 700;
+    cursor: pointer;
+    &:hover, &:focus, &:active {
+      color: darken($color-primary, 10%);
+    }
+  }
+}
+
+.btn-close {
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: 5px;
+  font-size: 11px;
+  cursor: pointer;
+  color: $color-text;
+  font-weight: 600;
+  @include transition(0.3s);
+  text-align: center;
+  &:hover {
+    color: $color-primary;
+  }
+  i {
+    vertical-align: middle;
+  }
+  &-rounded {
+    border: 1px solid $color-light;
+    border-radius: $br-rounded;
+    width: 25px;
+    min-width: 25px;
+    height: 25px;
+    &:hover {
+      border-color: $color-primary;
+    }
+  }
+}
+
+
+span.tag {
+  display: inline-block;
+  text-align: center;
+  border-radius: 12px;
+  font-size: $font-size-xs;
+  padding: 0 10px;
+  height: 25px;
+  line-height: 25px;
+  font-weight: 700;
+  font-family: $font-primary;
+  min-width: 100px;
+  max-width: 120px;
+  text-transform: lowercase;
+  @include box-shadow(0px 2px 6px 0px rgba(0, 0, 0, 0.13));
+  @include transition(all $trns-duration);
+
+  &.in-review {
+    background: $color-primary;
+  }
+
+  &.tertiary {
+    background-color: $color-tertiary;
+  }
+
+  &.to-do {
+    background: $color-secondary;
+  }
+
+  &.in-review, &.tertiary, &.to-do {
+    color: $color-white;
+    border: 0;
+  }
+}
+
+span.tag-outline {
+  display: inline-block;
+  text-align: center;
+  border: 1px solid $color-light;
+  border-radius: 4px;
+  min-width: 110px;
+  font-size: 14px;
+  font-weight: 500;
+  height: 35px;
+  line-height: 33px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+

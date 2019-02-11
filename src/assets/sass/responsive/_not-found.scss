@@ -1,0 +1,19 @@
+@media (max-width: $screen-md-s-max) {
+	.not-found-content {
+		padding: 50px 0;
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.not-found-content {
+		padding: 30px 0;
+
+		.img-wrap {
+			max-width: 100%;
+		}
+
+		p {
+			font-size: $font-size-base;
+		}
+	}
+}

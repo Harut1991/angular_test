@@ -1,0 +1,244 @@
+.scanning-result {
+
+  .progress-wrap {
+    margin: 40px 0;
+
+    p {
+      font-weight: 600;
+    }
+  }
+
+  i.risk-flag {
+    &:before {
+      content: $icon-check;
+      font-family: $font-icons;
+      font-size: 12px;
+      margin-right: 10px;
+    }
+
+    &.blue {
+      &:before {
+        color: $color-primary;
+      }
+    }
+
+    &.green {
+      &:before {
+        color: $color-tertiary;
+      }
+    }
+
+    &.orange {
+      &:before {
+        color: $color-orange;
+      }
+    }
+  }
+
+  i.fa-check {
+    &:before {
+      content: $icon-check;
+      font-family: $font-icons;
+      font-size: 12px;
+      margin-right: 10px;
+    }
+
+    &.green {
+      &:before {
+        color: $color-tertiary;
+      }
+    }
+  }
+
+  .header.bigger.result-target {
+    display: none;
+  }
+
+  .header.header-title.smaller.bolder {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $color-extra-lightest;
+    font-weight: 700;
+    font-size: 22px;
+  }
+
+  .ng-star-inserted {
+    .col-xs-12 {
+      @include flexbox;
+      @include flex-wrap(wrap);
+
+      h4, h5, ul {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      ul {
+        li {
+          padding: 5px 0;
+        }
+      }
+
+        &> .summary-box {
+          width: 100%;
+          margin-bottom: 50px;
+
+          .summary-subheading {
+            width: auto;
+          }
+        }
+
+        &> .summary-box ~ .summary-box{
+          width: 33.3%;
+        }
+
+        &:first-child {
+          width: 100%;
+
+          span.summary-subheading {
+            width: auto;
+            margin-right: 20px;
+          }
+        }
+
+        span.blue.bolder.summary-subheading {
+          width: 100%;
+          margin-bottom: 20px;
+          font-weight: 600;
+          font-size: 18px;
+          color: $color-highlight;
+        }
+
+        .scan-info, .bar-chart, .finding-details  {
+          table {
+            tr {
+              td {
+                padding-top: 6px;
+                padding-bottom: 6px;
+
+                &:first-child {
+                  padding-right: 20px;
+                  min-width: 20px;
+                }
+
+                b {
+                  font-weight: 500;
+                }
+
+                div {
+                  //high
+                  &.background-red {
+                    background-color: $color-warning-bg;
+                  }
+
+                  //medium
+                  &.background-orange {
+                    background-color: #d77d14;
+                  }
+
+                  //low
+                  &.background-blue {
+                    background-color: $color-primary-light;
+                  }
+
+                  //info
+                  &.background-green {
+                    background-color: $color-tertiary;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .accordion-style3.panel-group {
+    margin-bottom: 30px;
+
+    .panel.panel-default {
+      .panel-heading {
+        .panel-title.vuln-title {
+          font-weight: 600;
+          font-size: 16px;
+          color: $color-text;
+          margin-top: 20px;
+          border-bottom: 1px solid $color-extra-lightest;
+          padding: 5px 0;
+        }
+
+        .finding-details {
+          table.table.my-table-striped {
+            border-collapse: collapse;
+            margin: 20px 0 30px;
+
+            &, & tr, & td {
+              border: 1px solid $color-extra-lightest;
+            }
+
+            tr {
+              td {
+                padding: 15px;
+
+                a {
+                  @include flexbox;
+                  @include align-items(flex-start);
+
+                  img {
+                    width: 15px;
+                    margin: 2px 10px 0 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        a.accordion-toggle.collapsed {
+          pointer-events: none;
+          cursor: default;
+          position: relative;
+          margin-bottom: 10px;
+
+          &:after {
+            content: $icon-next;
+            font-family: $font-icons;
+            color: $color-gray-light;
+            font-size: 8px;
+            right: 0;
+          }
+        }
+      }
+    }
+
+    .panel-collapse.risk-details.collapse {
+      background: $color-extra-lightest;
+      padding: 20px 25px;
+      font-size: 14px;
+      line-height: 19.5px;
+      margin: 15px 0 25px;
+
+      a {
+        color: $color-primary;
+
+      }
+    }
+  }
+
+  table.params-table {
+    border-collapse: collapse;
+    margin: 20px 0 30px;
+
+    &, & tr, & td {
+      border: 1px solid $color-extra-lightest;
+    }
+
+    tr {
+      td {
+        padding: 15px;
+      }
+    }
+  }
+

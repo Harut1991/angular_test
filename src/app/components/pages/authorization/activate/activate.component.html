@@ -1,0 +1,41 @@
+ <!--resend email section -->
+<section class="section-bg section-padding-sm">
+  <div class="container cols-sm-2 justify-center">
+
+    <div class="col-md-s-8 col-sm-7 m-0 br-lg bg-white border register-form">
+      <div class="register-form-content">
+        <!--TODO create form for resend email-->
+        <!--error message -->
+        <div class="success-message-content" *ngIf="!activationFailed" >
+        <div class="hidden-loader loading waiting success">
+          <div class="circle">
+                <span class="cover">
+                </span>
+          </div>
+        </div>
+        </div>
+          <div class="error-message-content relative" *ngIf="activationFailed">
+            <div class="hidden-loader loading expired paused success" >
+              <div class="circle">
+                <span class="cover">
+                </span>
+                <i class="icon-close"></i>
+              </div>
+            </div>
+            <div class="hidden-content animated fadeInUp">
+              <div class="mt-5 w-500">
+                <h4>
+                  We're sorry.
+                </h4>
+                <p>
+                  The email address verification link you've submitted is invalid,expired, or has already been used.
+                </p>
+              </div>
+            </div>
+          </div>
+        <!--error message -->
+      </div>
+    </div>
+  </div>
+</section>
+ <!--resend email section -->

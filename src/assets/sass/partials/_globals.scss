@@ -1,0 +1,280 @@
+//floats , displays
+@each $key, $val in $resolutions {
+  @media (min-width: $val) {
+    .float-#{$key}-left {
+      float: left;
+    }
+    .float-#{$key}-right {
+      float: right;
+    }
+    .d-#{$key}-inline-block {
+      display: inline-block;
+    }
+    .d-#{$key}-block {
+      display: block;
+    }
+  }
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-hide, .hide {
+  display: none;
+}
+
+@each $key, $val in $resolutions {
+  @media (min-width: $val) {
+    .d-#{$key}-show {
+      display: block;
+    }
+  }
+}
+
+//fixes
+.clear-after {
+  @include clear-after;
+}
+
+.avoid-break {
+  @include break-inside;
+}
+
+//hover effects
+a {
+  @include transition(.3s ease);
+
+  &.hover-opacity {
+    @include transition($trns-duration);
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.hover-opacity {
+  a {
+    @include transition($trns-duration);
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+//vertical alignment
+.v-align-middle {
+  vertical-align: middle;
+}
+
+.v-align-bottom {
+  vertical-align: bottom;
+}
+
+.v-align-top {
+  vertical-align: top;
+}
+
+//paddings , margins
+.section-padding {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &-sm {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  &-xs {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.m-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+//colors
+@each $key, $val in $colors {
+  .color-#{$key} {
+    color: #{$val};
+  }
+
+  .bg-#{$key} {
+    background-color: #{$val};
+  }
+}
+
+.color-white-07 {
+  color: rgba(#ffffff, 0.7);
+}
+
+//width, max-width, min-width
+.width-full {
+  width: 100%;
+}
+
+.width-lg {
+  width: 55%;
+}
+
+.width-400 {
+  max-width: 400px;
+}
+
+.width-600 {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.width-750 {
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.width-800 {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.width-900 {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//height
+.height-full {
+  height: 100%;
+}
+
+//weights
+$i: 100;
+@while $i <= 900 {
+  .w-#{$i} {
+    font-weight: #{$i};
+  }
+  $i: $i + 100;
+}
+
+//z indexes
+.z-1 {
+  z-index: 1;
+  position: relative;
+}
+
+//images
+.img-area {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.img-rounded-xs {
+  img {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: $br-rounded;
+  }
+}
+
+//font-sizes
+.font-xl {
+  font-size: $font-size-xl;
+}
+
+.font-lg-x {
+  font-size: $font-size-lg-x;
+}
+
+.font-lg {
+  font-size: $font-size-lg;
+}
+
+.font-lg-s {
+  font-size: $font-size-lg-s;
+}
+
+.font-sm {
+  font-size: $font-size-sm;
+}
+
+//line heights
+.line-h-sm {
+  line-height: 22px;
+}
+
+//backgrounds
+.section-bg {
+  @include bg-img($image: "blue-bg.png", $repeat: no-repeat, $size: 100%, $position: right top);
+}
+
+//border-radius
+.br-lg {
+  border-radius: $br-lg;
+}
+
+.br {
+  border-radius: $br-default;
+}
+
+//border
+.border {
+  border: 1px solid $color-extralight;
+}
+
+.border-b-2 {
+  border-bottom: 2px solid $color-extralight;
+}
+
+.border-none {
+  border: none;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+//links
+.link {
+  color: $color-primary;
+  cursor: pointer;
+  border: none;
+  background: none;
+  @include transition(.3s ease);
+
+  &:hover {
+    color: lighten($color-primary, 10%);
+  }
+}
+
+//positions
+.relative {
+  position: relative !important;
+}
+
+
+.bold {
+  font-weight: 900;
+}

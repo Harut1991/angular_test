@@ -1,0 +1,16 @@
+@media (max-width: $screen-xxs-max) {
+  .payment-box {
+    ul.payment-list {
+      li {
+        label {
+          @include dir-col;
+          @include align-items(flex-start);
+
+          .price {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}

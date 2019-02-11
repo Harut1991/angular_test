@@ -1,0 +1,115 @@
+@media (max-width: $screen-lg-s-max) {
+	.steps {
+		.step {
+			.step-text {
+				max-width: 37%;
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-md-s-max) {
+	.steps {
+		.step {
+			min-height: 240px;
+
+			&:nth-child(even) {
+				.step-text {
+					span {
+						margin-left: 15px;
+					}
+				}
+			}
+
+			&:nth-child(odd) {
+				.step-text {
+					span {
+						margin-right: 15px;
+						text-align: right;
+					}
+				}
+			}
+
+			.step-text {
+				max-width: 30%;
+				span {
+					font-size: 110px;
+					line-height: 70px;
+					min-width: 70px;
+					text-align: left;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-sm-max) {
+	.steps {
+		padding: 0;
+		background: none;
+
+		.step {
+			margin-bottom: 30px;
+			@include flexbox;
+			@include align-items(center);
+			@include justify-content(space-around);
+
+			&:nth-child(even) {
+				.step-text {
+					margin-left: initial;
+				}
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			.step-text {
+				max-width: 50%;
+			}
+
+			.bordered-img {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.steps {
+		padding: 20px 0;
+
+		.step {
+			margin-bottom: 40px;
+			@include dir-col;
+
+			&:nth-child(odd) {
+				.step-text {
+					@include order(2);
+				}
+			}
+
+			&:nth-child(even) {
+				.step-text {
+					> div {
+						@include order(2);
+					}
+
+					span {
+						margin-left: 0;
+						margin-right: 15px;
+					}
+				}
+			}
+			.step-text {
+				max-width: 100%;
+				margin-top: 25px;
+				@include align-items(center);
+
+				span {
+					min-width: auto;
+				}
+			}
+		}
+	}
+}

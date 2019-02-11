@@ -1,0 +1,30 @@
+@media (max-width: $screen-lg-s-max) {
+
+    .question-list {
+      @include column($count: 2, $gap: 40px);
+    }
+}
+
+@media (max-width: $screen-xs-max) {
+    .question-list {
+      @include column($count: 1, $gap: 0);
+
+      h4,  p.answer, p.read-more {
+        min-height: min-content;
+      }
+    }
+	.inquiry-btn {
+		text-align: center;
+		margin-top: 25px;
+	}
+	.search-input {
+		input {
+			padding-left: 35px;
+		}
+	}
+	#question-popup {
+		.mCSB_outside + .mCSB_scrollTools {
+			right: -20px;
+		}
+	}
+}

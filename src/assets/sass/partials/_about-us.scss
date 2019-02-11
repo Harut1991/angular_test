@@ -1,0 +1,27 @@
+.about-us {
+  h1 {
+    font-size: $font-size-h2;
+    font-family: $font-primary;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $color-highlight;
+  }
+
+	 div {
+		.col {
+			@include flexbox();
+			@include align-items(center);
+			@include justify-content(center);
+		}
+	}
+}
+
+.address {
+	position: relative;
+	i {
+		color: $color-gray-light;
+		font-size: 16px;
+		@include centerer($horizontal: false, $vertical: true);
+		left: -5px;
+	}
+}

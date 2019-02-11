@@ -1,0 +1,89 @@
+.card-container {
+  .jp-card-container {
+    margin-left: 0;
+
+    @include transform(none !important);
+
+    .jp-card {
+      min-width: 210px;
+      border: 1px solid $color-extralight;
+      color: $color-gray-light;
+      background-color: #fff;
+      @include box-shadow(2px 2px 12px 0 rgba(0, 0, 0, 0.20));
+
+      .jp-card-logo {
+        color: $color-highlight;
+        text-shadow: none;
+
+        &.jp-card-visa {
+          &:before {
+            border-right-color: $color-highlight;
+          }
+        }
+      }
+      .jp-card-lower {
+        font-family: $font-primary;
+        font-weight: 700;
+
+        .jp-card-name {
+          width: 185px;
+          max-width: 60%;
+        }
+        * {
+          font-family: inherit !important;
+          font-weight: inherit;
+        }
+      }
+      .jp-card-front, .jp-card-back {
+        background: #fbfbfb;
+        color: inherit;
+
+        .jp-card-display {
+          opacity: 1;
+          color: inherit;
+        }
+      }
+      .jp-card-front {
+        .jp-card-shiny {
+          background-color: $color-primary;
+
+          &:before {
+            background-color: $color-primary-light;
+          }
+        }
+      }
+      &.jp-card-identified {
+        color: $color-highlight;
+        @include box-shadow(3px 3px 60px 0 rgba(0, 0, 0, 0.05), 0 9px 18px 0 rgba(0,0,0,.15));
+
+        .jp-card-front, .jp-card-back {
+          background: #fbfbfb;
+
+          &:before {
+            background: #fff !important;
+          }
+          .jp-card-display {
+            color: inherit;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.rounded-btn {
+  border: none;
+  background: $color-tertiary;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,58 @@
+//floats , displays
+@each $key,$val in $resolutions {
+  @media (min-width: $val) {
+    .d-#{$key}-flex {
+      @include flexbox;
+    }
+  }
+}
+.d-flex {
+  @include flexbox;
+}
+.flex-wrap {
+  @include flex-wrap(wrap);
+}
+
+//justify-content
+.justify-start {
+  @include justify-content(flex-start);
+}
+.justify-end {
+  @include justify-content(flex-end);
+}
+.justify-center {
+  @include justify-content(center);
+}
+.justify-space-between {
+  @include justify-content(space-between);
+}
+.justify-space-around {
+  @include justify-content(space-around);
+}
+
+//align items
+.align-start {
+  @include align-items(flex-start);
+}
+.align-end {
+  @include align-items(flex-end);
+}
+.align-center {
+  @include align-items(center);
+}
+.align-baseline {
+  @include align-items(baseline);
+}
+.justify-stretch {
+  @include align-items(stretch);
+}
+
+// flex direction
+.dir-col {
+  @include dir-col;
+}
+
+// align self
+.self-end {
+  @include align-self(flex-end);
+}

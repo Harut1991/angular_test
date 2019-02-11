@@ -1,0 +1,36 @@
+<section class="single-blog-page pt-10">
+  <div class="container cols-md-2 mb-10">
+    <div class="col-md-s-12 col-md-5">
+      <div class="d-flex justify-center dir-col height-full">
+        <h1 class="mb-3">{{article?.title | emptyFormat}}</h1>
+        <div class="details">
+          <!--<span class="author">by: {{article?.author | emptyFormat}}</span>-->
+          <p class="date mb-4">{{article?.created | dateFormat}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-s-12 col-md-7 text-right mb-10 blog-img">
+      <img [src]="article?.image ? article.image : '../../../../../assets/images/sliders/blog-1.png'" alt="" class="blog-pic">
+    </div>
+    <div class="col-md-s-12 col-md-8 info" [innerHTML]="article?.text | safeHtml">
+    </div>
+    <div class="col-md-s-12 col-md-4 sharing">
+      <h4 class="unset mb-6 mt-6 w-700">Tags</h4>
+      <ul class="d-flex flex-wrap tags">
+        <li *ngFor="let tag of article.tags">
+          <span class="tag-outline">{{tag.tag}}</span>
+        </li>
+      </ul>
+      <h4 class="unset mb-5 w-700">Share experience</h4>
+      <ul class="social d-flex">
+        <li app-fb-share></li>
+        <li app-linked-in-share></li>
+        <li app-twitter-share [text]="article.title"></li>
+        <li app-gplus-share></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div *ngIf="relatedArticles.length !==0" app-blog-slider [header]="'similar articles'"
+     [blogPosts]="relatedArticles"></div>

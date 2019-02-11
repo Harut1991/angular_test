@@ -1,0 +1,265 @@
+.top-section-styles {
+  position: relative;
+  overflow: hidden;
+  @include bg-img($image: "city.png", $repeat: no-repeat, $size: cover, $position: center center);
+  
+  &.section-padding {
+    padding-bottom: 70px;
+    padding-top: 70px;
+  }
+
+  &:after {
+    content: '';
+    width: 40%;
+    max-width: 470px;
+    @include bg-img($image: "banner-img.png", $repeat: no-repeat, $size: 100%, $position: bottom);
+    @include pos-abs($top: 0, $right: 10vw, $bottom: 0);
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.scanning-form {
+  position: relative;
+  input {
+    padding-right: 95px;
+  }
+  .link {
+    font-size: $font-size-base;
+    font-family: $font-primary;
+    @include pos-abs($top: 23px, $right: 0);
+    z-index: 2;
+  }
+}
+
+.bordered-img {
+  width: 264px;
+  height: 264px;
+  display: inline-block;
+  border: 30px solid $color-secondary;
+  border-radius: $br-rounded;
+  position: relative;
+
+  &.highlight {
+    border-color: $color-highlight;
+  }
+
+  &.primary {
+    border-color: $color-primary;
+  }
+
+  img {
+    height: 100%;
+    max-height: 115px;
+    width: auto;
+    max-width: 80%;
+    @include centerer();
+  }
+}
+
+.before-oblique {
+  position: relative;
+
+  .img-area {
+    height: 100%;
+
+    img {
+      @include centerer($horizontal: false, $vertical: true);
+    }
+  }
+
+  &:before {
+    content: '';
+    width: 100%;
+    background-color: $color-secondary;
+    @include transform(skew(20deg,0deg));
+    @include pos-abs($top: 0, $left: -130px, $bottom: 0);
+  }
+
+  &-reverse {
+    &:before {
+      @include transform(skew(-18deg,0deg));
+      background: $color-white;
+      z-index: -1;
+    }
+  }
+}
+
+.before-bg-primary {
+  position: relative;
+
+  &:before {
+    content: '';
+    width: 40%;
+    background-color: $color-primary;
+    @include pos-abs($top: 0, $left: 0, $bottom: 0);
+  }
+}
+
+.after-bg-primary {
+  position: relative;
+
+  &:after {
+    content: '';
+    width: 40%;
+    background-color: $color-primary;
+    @include pos-abs($top: 0, $right: 0, $bottom: 0);
+  }
+}
+
+.after-oblique-reverse {
+  &:before {
+    @include transform(skew(-18deg,0deg));
+    background: $color-primary;
+    z-index: -1;
+  }
+}
+
+.before-oblique-under {
+  z-index: 1;
+  position: relative;
+  padding-right: 230px;
+}
+
+// Testimonials
+.testimonials {
+  position: relative;
+  z-index: 0;
+
+  &:before, &:after {
+    content: '';
+    display: inline-block;
+    width: 228px;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &:before {
+    @include bg-img($image: "testimonials-left.png", $repeat: no-repeat, $position: center center);
+    @include pos-abs($top: 0px, $left: 0px);
+  }
+
+  &:after {
+    @include bg-img($image: "testimonials-right.png", $repeat: no-repeat, $position: center center);
+    @include pos-abs($top: 0px, $right: 0px);
+  }
+}
+
+.testimonial-slider {
+  position: relative;
+  border-radius: 10px;
+  background: $color-white;
+  overflow: hidden;
+  @include box-shadow(0 3px 5px 0 rgba(0, 0, 0, 0.1));
+
+  &:before, &:after {
+    content: '';
+    @include bg-img($image: "quote.png", $repeat: no-repeat, $size: 100%, $position: center center);
+    width: 58px;
+    height: 48px;
+    display: inline-block;
+  }
+
+  &:before {
+    @include pos-abs($top: -8px, $left: 36px);
+    @include rotate(180);
+  }
+
+  &:after {
+    @include pos-abs($bottom: -8px, $right: 36px);
+  }
+
+  .slide-content {
+    padding: 25px 100px 50px;
+    height: 100%;
+
+    p {
+      font-size: 14px;
+      line-height: 21px;
+    }
+    span {
+      color: rgba($color-highlight, .5);
+    }
+  }
+
+  .slick-btn {
+    &-next {
+      right: 25px;
+    }
+    &-prev {
+      left: 25px;
+    }
+  }
+  .slick-dots {
+    bottom: 30px;
+  }
+}
+
+.reports-slider {
+  overflow-x: hidden;
+  .slick-btn {
+    z-index: 21;
+    display: none;
+  }
+}
+
+// Support
+.support {
+  form {
+    width: 100%;
+  }
+
+  .textarea-row {
+    margin-top: 40px;
+    textarea {
+      height: 150px;
+    }
+  }
+
+  .questions-reference {
+    padding-right: 40px;
+  }
+
+  .after-oblique-reverse {
+    &:before {
+      @include transform(skew(-13deg,0deg));
+    }
+  }
+
+  li {
+    margin-bottom: 20px;
+    background: $color-white;
+    border-radius: 25px;
+    @include transition(.3s);
+
+    &:hover {
+      @include box-shadow(0px 5px 10px 0px rgba(0, 0, 0, .2));
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      padding: 15px 25px 15px 50px;
+      position: relative;
+      display: block;
+      @include ellipsis(100%);
+      color: $color-text;
+      font-weight: 500;
+      &:before {
+        content: unicode($icon-check);
+        font-family: $font-icons;
+        color: $color-text;
+        font-size: 12px;
+        line-height: 18px;
+        position: absolute;
+        top: 16px;
+        left: 30px;
+      }
+    }
+  }
+}

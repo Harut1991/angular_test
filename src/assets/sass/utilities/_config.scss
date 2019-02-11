@@ -1,0 +1,38 @@
+$resolutions: (
+  xxs: $screen-xxs,
+  xs: $screen-xs,
+  sm: $screen-sm,
+  md-s: $screen-md-s,
+  md: $screen-md,
+  lg-s: $screen-lg-s,
+  lg: $screen-lg,
+  lg-x: $screen-lg-x
+) !default;
+
+$spaces: (
+  0: 0 !important,
+  1: 5px,
+  2: 10px,
+  3: 15px,
+  4: 20px,
+  5: 25px,
+  6: 30px,
+  7: 35px,
+  8: 40px,
+  9: 45px,
+  10: 50px
+) !default;
+
+$colors: (
+  white: $color-white,
+  primary: $color-primary,
+  secondary: $color-secondary,
+  highlight: $color-highlight,
+  text: $color-text,
+  gray: $color-gray,
+  gray-light: $color-gray-light,
+  light: $color-light,
+  extralight: $color-extralight,
+  warning: $color-warning,
+  light-bg: $color-light-bg,
+) !default;

@@ -1,0 +1,28 @@
+@media (max-width: $screen-sm-max) {
+  .dashboard-header {
+    @include dir-col;
+
+    .nav-menu {
+      @include dir-col;
+      @include align-items(center);
+
+      &.nav-hr {
+         li {
+           padding-top: 15px;
+           padding-bottom: 15px;
+            margin-left: 0;
+
+            &:after {
+              content: none;
+          }
+        }
+
+        margin-bottom: 15px;
+      }
+    }
+
+    .sample-btn {
+      margin-bottom: 15px;
+    }
+  }
+}

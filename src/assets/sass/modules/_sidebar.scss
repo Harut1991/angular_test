@@ -1,0 +1,38 @@
+.with-left-sidebar {
+  padding-left: 240px;
+  @include flexbox;
+
+  .page-content {
+    width: 100%;
+  }
+}
+
+.sidebar {
+  width: 240px;
+  background-color: #fff;
+  padding-top: 100px;
+  padding-bottom: 338px;
+  font-weight: 600;
+  @include box-shadow(0px 0px 10px 0px rgba(0, 0, 0, 0.16));
+  @include pos-abs($top: 0, $left: 0, $bottom: 0);
+
+  .tab {
+    padding: 15px 35px;
+    display: block;
+
+    a {
+      &:hover {
+        color: $color-highlight;
+      }
+    }
+
+    [class^="icon-"], [class*=" icon-"] {
+      vertical-align: text-top;
+      margin-right: 15px;
+    }
+  }
+
+  .active {
+    color: $color-highlight;
+  }
+}

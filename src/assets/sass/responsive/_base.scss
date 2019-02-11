@@ -1,0 +1,26 @@
+@media (max-width: $screen-lg-max) {
+  .full-container {
+  	padding-left: $cont-padding-md;
+  	padding-right: $cont-padding-md;
+  }
+}
+
+@media (max-width: $screen-lg-s-max) {
+  .container {
+    padding-left: $cont-padding-md;
+    padding-right: $cont-padding-md;
+  }
+}
+
+@media (max-width: $screen-sm-max) {
+  body {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  body {
+    font-size: round($font-size-base / 1.1);
+    padding-bottom: 529px;
+  }
+}

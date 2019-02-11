@@ -1,0 +1,188 @@
+<!-- banner section -->
+<section class="section-padding top-section-styles">
+  <div class="container">
+    <div  class="width-lg">  
+      <h1 class="color-secondary"><span class="color-primary">code review</span> for small businesses and startups.</h1>
+      <!--<a [routerLink]="getStartedUrl" class="btn btn-primary mt-8">get started</a>-->
+       <div class="mt-10">
+        <p class="color-secondary font-lg-s w-700 mb-4 text-left">Check your website security!</p>
+        <form [formGroup]="scanForm" (ngSubmit)="scan(scanForm.value)" class="scanning-form width-400">
+          <div class="form-row" toggleErrClass [formControlElement]="scanForm.get('domain')">
+            <input formControlName="domain" type="text" id="website" appFocus [labelId]="'website-label'"/>
+            <label for="website" id="website-label">Your Website</label>
+            <div class="error-msg" *ngFor="let error of errorMessages">
+              <p *ngIf="scanForm.get('domain').hasError(error.type)">{{error.message}}</p>
+            </div>
+          </div>
+          <button type="submit" class="link w-700">Check!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end banner section -->
+
+<!-- about short section -->
+<section class="section-padding">
+  <div class="container cols-md-s-3 cols-padding text-center about">
+    <div class="col">
+      <div class="bordered-img">
+        <img src="assets/images/svg/fast.svg" alt="Lightening fast">
+      </div>
+      <h3 class="mt-7 font-lg-s">Lightening fast!</h3>
+      <p class="w-600 mt-4">Get your code reviewed professionlly in a surpirisingly short time.</p>
+    </div>
+    <div class="col">
+      <div class="bordered-img">
+        <img src="assets/images/svg/codereview.svg" alt="Professional Code review">
+      </div>
+      <h3 class="mt-7 font-lg-s">Professional Code review</h3>
+      <p class="w-600 mt-4">An honest review of your code will help in the right development of your project.</p>
+    </div>
+    <div class="col">
+      <div class="bordered-img">
+        <img src="assets/images/svg/dashboard.svg" alt="highly intelligible">
+      </div>
+      <h3 class="mt-7 font-lg-s">Customized solutions </h3>
+      <p class="w-600 mt-4">Contact us in order to get your code analysis in the most convenient way.  </p>
+    </div>
+  </div>
+</section>
+<!-- end about short section -->
+
+<!-- know your code section -->
+<section class="bg-secondary before-bg-primary">
+  <div class="container cols-sm-2 color-white">
+    <div class="col-lg-6 col-sm-8 section-padding bg-primary before-oblique-under">
+      <h2 class="color-white">Know your code !</h2>
+      <p class="color-white-07 font-lg-s w-500 mt-4">Make justified decisions, prevent problems before they arise.
+        Knowing the core details of your code will help you carry out improvements on it while its writing is still in
+        process so that you don't have to face further more complex problems when the code is already done with lots of
+        downsides.</p>
+      <a [routerLink]="getStartedUrl" class="btn btn-white mt-8">get started</a>
+    </div>
+    <div class="col-lg-6 col-sm-4 before-oblique pt-7 z-1">
+      <div class="img-area">
+        <img src="assets/images/know-your-code.svg" alt="know your code">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end know your code section -->
+
+<!-- slider look section -->
+<!--<section class="section-padding reports-slider">
+  <div class="container text-center">
+    <h2 class="mb-10">see how our reports look like</h2>
+    &lt;!&ndash; slider with frame &ndash;&gt;
+    <div class="slider-frame" app-mousewheel>
+      <ngx-slick class="carousel"
+      #slickModal="slick-modal" [config]="{
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        draggable: false,
+        speed: 600,
+        prevArrow: '.reports-prev-btn',
+        nextArrow: '.reports-next-btn',
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              arrows: true
+            }
+          }]}">
+        <div ngxSlickItem class="slide">
+         <span class="img-slider" style="background-image: url('assets/images/sliders/report-2.png')"></span>
+        </div>
+        <div ngxSlickItem class="slide">
+         <span class="img-slider" style="background-image: url('assets/images/sliders/report-2.png')"></span>
+        </div>
+        <div ngxSlickItem class="slide">
+          <span class="img-slider" style="background-image: url('assets/images/sliders/report-2.png')"></span>
+        </div>
+         <div ngxSlickItem class="slide">
+          <span class="img-slider" style="background-image: url('assets/images/sliders/report-2.png')"></span>
+        </div>
+         <div ngxSlickItem class="slide">
+          <span class="img-slider" style="background-image: url('assets/images/sliders/report-2.png')"></span>
+        </div>
+         <div ngxSlickItem class="slide">
+          <span class="img-slider" style="background-image: url('assets/images/sliders/report-2.png')"></span>
+        </div>
+      </ngx-slick>
+      <button type="button" class="slick-btn slick-btn-next reports-next-btn">
+        <i class="icon-next"></i>
+      </button>
+      <button type="button" class="slick-btn slick-btn-prev reports-prev-btn">
+        <i class="icon-previous"></i>
+      </button>
+    </div>
+    &lt;!&ndash; end slider with frame &ndash;&gt;
+    <a routerLink="/demo" class="btn btn-bordered mt-7">see demo</a>
+  </div>
+</section>-->
+<!-- end slider look section -->
+<!-- testimonials -->
+<section class="section-padding testimonials">
+  <div class="container">
+    <div class="text-center width-600">
+      <h3 class="mb-8">What our customers thought about us</h3>
+      <!-- slider testimonials -->
+      <div class="testimonial-slider br-lg bg-white border">
+        <ngx-slick class="carousel" #slickModal="slick-modal" [config]="{
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          speed: 600,
+          dots: true,
+          cssEase: 'ease-in-out',
+          prevArrow: '.testimonials-prev-btn',
+          nextArrow: '.testimonials-next-btn'}">
+          <div ngxSlickItem class="slide" *ngFor="let item of slickItems">
+            <div class="slide-content d-flex justify-center dir-col">
+              <h5 class="title">{{item.reviewerName}}</h5>
+              <p class="w-500 mt-3 mb-6">{{item.review}}</p>
+              <span class="w-500 font-sm">{{item.date | dateFormat}}</span>
+            </div>
+          </div>
+        </ngx-slick>
+        <button type="button" class="slick-btn slick-btn-next testimonials-next-btn">
+          <i class="icon-next"></i>
+        </button>
+        <button type="button" class="slick-btn slick-btn-prev testimonials-prev-btn">
+          <i class="icon-previous"></i>
+        </button>
+      </div>
+      <!-- end slider testimonials  -->
+      <a [routerLink]="getStartedUrl" class="btn btn-primary mt-7">get started</a>
+    </div>
+  </div>
+</section>
+<!-- end testimonials -->
+
+<!--blog section-->
+<div app-blog-slider *ngIf="blogPosts.length !==0" [blogPosts]="blogPosts" [header]="'Blog'"></div>
+<!--blog section-->
+
+<!-- support section -->
+<section class="bg-secondary after-bg-primary support">
+  <div class="container cols-md-s-2 color-white">
+    <div class="col-md-8 col-md-s-7 section-padding before-oblique-under color-white z-1 support-left">
+      <div class="questions-reference">
+        <h2 class="color-white">Our FAQ covers a wide variety of different questions.</h2>
+        <p class="color-white-07 font-lg-s w-500 mt-4">There is everything you need to get things going! Check out the
+          topics!</p>
+        <ul class="mt-7">
+          <li><a routerLink="/faq" [queryParams]="{page: 1}">How much will it cost me?</a></li>
+          <li><a routerLink="/faq" [queryParams]="{page: 1}">What languages you use to review my code?</a></li>
+          <li><a routerLink="/faq" [queryParams]="{page: 1}">How long will it take to review my code?</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div app-home-contact-us
+         class="col-md-4 col-md-s-5 section-padding d-flex align-center bg-primary before-oblique after-oblique-reverse z-1"></div>
+  </div>
+</section>
+<!-- end support section -->

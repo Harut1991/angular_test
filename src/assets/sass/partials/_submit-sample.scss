@@ -1,0 +1,55 @@
+.sample-dropdowns {
+  @include flexbox;
+  @include justify-content(space-between);
+
+  > div {
+    width: calc((100% - 30px) / 2);
+  }
+
+  .select-row {
+    margin-left: 30px;
+  }
+
+  .form-row {
+    input {
+      padding-right: 40px;
+
+      &::placeholder {
+        color: $color-gray-light;
+      }
+
+      &:-ms-input-placeholder {
+        color: $color-gray-light;
+      }
+
+      &::-ms-input-placeholder {
+        color: $color-gray-light;
+      }
+    }
+  }
+}
+
+.sample-page {
+  .upload-files {
+    margin: 20px 0 30px;
+
+    .info {
+      font-style: italic;
+      font-size: 12px;
+      margin-top: 8px;
+      text-align: left;
+    }
+  }
+
+  .form-row {
+    &.textarea-row {
+      label {
+        position: static;
+      }
+
+      textarea {
+        margin-top: 10px;
+      }
+    }
+  }
+}

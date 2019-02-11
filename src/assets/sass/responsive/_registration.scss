@@ -1,0 +1,68 @@
+@media (max-width: $screen-lg-s-max) {
+  .plan {
+    > div {
+      padding: 70px 30px;
+    }
+  }
+
+  .register-form,
+  .login-form {
+    > .register-form-content {
+      padding: 60px 130px;
+    }
+  }
+}
+
+@media (max-width: $screen-md-s-max) {
+  .register-form {
+    > .register-form-content {
+      padding: 60px;
+    }
+  }
+  .success-message-content, .error-message-content {
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: $screen-sm-max) {
+  .plan {
+    > div {
+      padding: 60px 30px;
+    }
+  }
+  .register-form {
+    > .register-form-content {
+      padding: 60px 40px;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .plan {
+    > div {
+      padding: 30px 20px;
+    }
+  }
+  .register-form {
+    text-align: center;
+    > .register-form-content {
+      padding: 50px;
+    }
+    h3 {
+      margin-bottom: 30px;
+    }
+    .btn {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: $screen-xxs-max) {
+  .register-form {
+    > .register-form-content {
+      padding: 40px 20px;
+    }
+  }
+}

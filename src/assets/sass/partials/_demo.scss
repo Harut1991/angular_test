@@ -1,0 +1,60 @@
+.img-demo-oblique {
+  &:before {
+    z-index: -1;
+  }
+}
+
+.demo-section {
+  @include transition($trns-duration);
+
+  h2.demo-title {
+    font-size: 22px;
+  }
+
+  &.demo-dashboard {
+    .before-oblique {
+      &:before {
+        content: '';
+        width: 100%;
+        background-color: #003581;
+        -webkit-transform: skew(20deg, 0deg);
+        transform: skew(20deg, 0deg);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -148px;
+      }
+    }
+  }
+
+  .img-demo-bg {
+    display: inline-block;
+    position: relative;
+
+    img {
+      max-width: 100%;
+      max-height: 530px;
+      display: block;
+    }
+
+    .second-img {
+      position: absolute;
+      z-index: -1;
+      @include pos-abs($top: 0, $left: 0, $right: 0, $bottom: 0);
+    }
+  }
+
+  &:hover {
+    .img-demo-bg {
+      .second-img {
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.section-highlight {
+  position: relative;
+  z-index: 3;
+  @include box-shadow(0px 2px 6px 0px rgba(0, 0, 0, 0.2));
+}

@@ -1,0 +1,170 @@
+@import "variables";
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: $font-icons !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@function unicode($str) {
+  @return unquote("\"") + $str + unquote("\"");
+}
+
+.icon-edit {
+  &:before {
+    content: $icon-edit;
+  }
+}
+
+.icon-dashboard {
+  &:before {
+    content: $icon-dashboard;
+  }
+}
+
+.icon-notification {
+  &:before {
+    content: $icon-notification;
+  }
+}
+
+.icon-remove {
+  &:before {
+    content: $icon-remove;
+  }
+}
+
+.icon-add-2 {
+  &:before {
+    content: $icon-add-2;
+  }
+}
+
+.icon-arrow-top {
+  &:before {
+    content: $icon-arrow-top;
+  }
+}
+
+.icon-add {
+  &:before {
+    content: $icon-add;
+  }
+}
+
+.icon-arrow-down {
+  &:before {
+    content: $icon-arrow-down;
+  }
+}
+
+.icon-menu {
+  &:before {
+    content: $icon-menu;
+  }
+}
+
+.icon-facebook {
+  &:before {
+    content: $icon-facebook;
+  }
+}
+
+.icon-g-plus {
+  &:before {
+    content: $icon-g-plus;
+  }
+}
+
+.icon-instagram {
+  &:before {
+    content: $icon-instagram;
+  }
+}
+
+.icon-next {
+  &:before {
+    content: $icon-next;
+  }
+}
+
+.icon-previous {
+  &:before {
+    content: $icon-previous;
+  }
+}
+
+.icon-search {
+  &:before {
+    content: $icon-search;
+  }
+}
+
+.icon-twitter {
+  &:before {
+    content: $icon-twitter;
+  }
+}
+
+.icon-file {
+  &:before {
+    content: $icon-file;
+  }
+}
+
+.icon-upload {
+  &:before {
+    content: $icon-upload;
+  }
+}
+
+.icon-map {
+  &:before {
+    content: $icon-map;
+  }
+}
+
+.icon-warning {
+  &:before {
+    content: $icon-warning;
+  }
+}
+
+.icon-check {
+  &:before {
+    content: $icon-check;
+  }
+}
+
+.icon-close {
+  &:before {
+    content: $icon-close;
+  }
+}
+
+.icon-user {
+  &:before {
+    content: $icon-user;
+  }
+}
+
+.icon-download {
+  &:before {
+    content: $icon-download;
+  }
+}
+
+.icon-link {
+  &:before {
+    content: $icon-link; 
+  }
+}

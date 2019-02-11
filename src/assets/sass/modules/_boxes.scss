@@ -1,0 +1,82 @@
+.box {
+  position: relative;
+  border-radius: $br-md-x;
+  background-color: #fff;
+  @include box-shadow(1.4px 1.4px 3px 0px rgba(0, 0, 0, 0.2));
+  @include transition(.3s ease);
+
+  .box-top {
+    padding: 32px 20px 20px 30px;
+  }
+  .box-footer {
+    padding: 20px 20px 20px 30px;
+    background-color: $color-extra-lightest;
+    border-bottom-left-radius: $br-md-x;
+    border-bottom-right-radius: $br-md-x;
+    min-height: 95px;
+  }
+  .abs-box-buttons {
+    color: $color-light;
+    font-size: $font-size-lg-s;
+    @include pos-abs($top: 15px, $right: 15px);
+
+    [class^="icon-"], [class*=" icon-"] {
+      cursor: pointer;
+      @include transition(.3s ease);
+
+      &:hover {
+        color: $color-highlight;
+      }
+    }
+  }
+  .boxes & {
+    &:hover {
+      @include box-shadow(1.4px 1.4px 30px 0px rgba(0, 0, 0, 0.2));
+    }
+  }
+}
+
+.box-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: inherit;
+}
+
+.right-fix-xs {
+  .left {
+    width: calc(100% - 115px);
+  }
+  .right {
+    width: 100px;
+  }
+}
+
+.rounded-count {
+  width: 48px;
+  height: 48px;
+  border-radius: $br-rounded;
+  line-height: 48px;
+  text-align: center;
+  font-weight: 600;
+  background-color: $color-warning-bg;
+  color: #fff;
+  display: inline-block;
+
+  &:empty, &.empty {
+    background-color: #F0F2F2;
+    color: $color-highlight;
+  }
+  &:empty:not(.empty) {
+    &:before {
+      content: '0';
+    }
+  }
+}
+
+.box-section {
+  padding: 80px 145px;
+}
+
+.box-section-button {
+  margin-top: 40px;
+}

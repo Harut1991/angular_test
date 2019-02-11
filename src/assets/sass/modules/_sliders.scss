@@ -1,0 +1,118 @@
+.slider-frame {
+  padding-top: 15px;
+  padding-bottom: 46px;
+  position: relative;
+
+  &:before {
+    content: '';
+    @include centerer($horizontal: true, $vertical: false);
+    top: 0;
+    @include bg-img($image: "sliders/screen-frame.png", $repeat: no-repeat, $size: 100% 100%, $position: center bottom);
+    z-index: 20;
+    width: 49.5%;
+    height: 100%;
+  }
+
+  li {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.img-slider {
+  display: block;
+  height: 265px;
+  @include bg-img($repeat: no-repeat, $size: cover, $position: center);
+}
+
+.carousel {
+  .slick-track {
+    @include flexbox();
+
+    .slick-slide {
+      height: auto;
+    }
+  }
+}
+
+.slick-btn {
+  display: inline-block;
+  cursor: pointer;
+  z-index: 2;
+  border: none;
+  background: none;
+  @include centerer($horizontal: false, $vertical: true);
+
+  &-next {
+    right: 0;
+  }
+
+  &-prev {
+    left: 0;
+  }
+
+  i {
+    font-size: 26px;
+    color: #e8e8e8;
+    @include transition(.3s ease);
+  }
+
+  &:hover {
+    i {
+      color: $color-secondary;
+    }
+  }
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: 0px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+
+  li {
+    position: relative;
+    display: inline-block;
+    margin: 0 4px;
+    padding: 0;
+
+    &.slick-active {
+      button {
+        background: $color-primary;
+
+        &:hover {
+          background: darken($color-primary, 8%);
+        }
+      }
+    }
+  }
+
+  .slick-active {
+    button {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background: #e6e6e6;
+    border-radius: 50%;
+    @include transition(.3s ease);
+
+    &:hover {
+      background: darken(#e6e6e6, 8%);
+    }
+  }
+}

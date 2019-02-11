@@ -1,0 +1,74 @@
+<!-- registration section -->
+<section class="section-bg section-padding-sm">
+  <div class="container cols-sm-2 justify-center">
+
+    <div class="col-md-s-8 col-sm-7 m-0 br-lg bg-white border register-form relative">
+      <!--success message -->
+      <div class="success-message-content" *ngIf="isFormValid">
+        <div class="hidden-loader loading check" [ngClass]="{'paused success': isSignUpSuccess}">
+          <div class="circle">
+            <span class="cover"></span>
+          </div>
+        </div>
+        <div class="hidden-content animated fadeInUp" *ngIf="isSignUpSuccess">
+          <div class="mt-10 w-500">
+            <h3>Congratulations!</h3>
+            <p>You now have a Kodeist account!</p>
+            <p>Please check your e-mail to confirm your registration. </p>
+            <a [href]="emailDomain" target="_blank" class="btn btn-md btn-primary mt-20">
+              Check email
+            </a>
+            <p class="text-center mt-5">
+              <a (click)="resendToken()" class="btn-link">resend email</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--success message -->
+
+      <div class="register-form-content load-hide">
+        <h3>Sign up to <span class="color-light">submit</span> your code</h3>
+        <form [formGroup]="form" (ngSubmit)="submitForm(form.value)">
+          <div class="form-row" toggleErrClass [formControlElement]="form.get('user_name')">
+            <input type="text" id="register-name" appFocus [labelId]="'register-label-name'" formControlName="user_name"
+                   required/>
+            <label for="register-name" id="register-label-name">Full Name</label>
+            <div class="error-msg" *ngFor="let error of validationMessages.name">
+              <p *ngIf="form.get('user_name').hasError(error.type)">{{error.message}}</p>
+            </div>
+          </div>
+          <div class="form-row" toggleErrClass [formControlElement]="form.get('email')">
+            <input type="email" name="email" id="register-email" appFocus [labelId]="'register-label-email'"
+                   formControlName="email" required/>
+            <label for="register-email" id="register-label-email">Email</label>
+            <div class="error-msg" *ngFor="let error of validationMessages.email">
+              <p *ngIf="form.get('email').hasError(error.type)">{{error.message}}</p>
+            </div>
+          </div>
+          <div class="form-row" toggleErrClass [formControlElement]="form.get('password')">
+            <input type="password" id="register-password" appFocus [labelId]="'register-label-password'"
+                   formControlName="password" required/>
+            <label for="register-password" id="register-label-password">Password</label>
+            <div class="error-msg" *ngFor="let error of validationMessages.password">
+              <p *ngIf="form.get('password').hasError(error.type)">{{error.message}}</p>
+            </div>
+          </div>
+          <div class="form-row" toggleErrClass [formControlElement]="form.get('reenter_password')">
+            <input type="password" id="register-reenter-password" appFocus [labelId]="'register-label-reenter-password'"
+                   formControlName="reenter_password" required/>
+            <label for="register-reenter-password" id="register-label-reenter-password">Reenter password</label>
+            <div class="error-msg" *ngFor="let error of validationMessages.confirm_password">
+              <p *ngIf="form.get('reenter_password').hasError(error.type)">{{error.message}}</p>
+            </div>
+          </div>
+          <!-- TODO - add class "active" to class="error-text" to show error message -->
+          <p class="error-text" [ngClass]="{'active': isRegFailed}">{{signUpFailedMessage}}</p>
+          <button type="submit" class="btn btn-sm btn-primary">sign up
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end registration section -->
+

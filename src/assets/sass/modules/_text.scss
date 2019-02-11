@@ -1,0 +1,51 @@
+@each $key,$val in $resolutions {
+  @media (min-width: $val) {
+    // Alignment
+    .text-#{$key}-left {
+      text-align: left;
+    }
+    .text-#{$key}-right {
+      text-align: right;
+    }
+    .text-#{$key}-center {
+      text-align: center;
+    }
+    .text-#{$key}-justify {
+      text-align: justify;
+    }
+  }
+}
+
+//Alignment
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+
+// Transformation
+.text-lowercase {
+  text-transform: lowercase;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+//Text style
+.italic {
+  font-style: italic;
+}
+
+.ellipsis {
+  @include ellipsis(100%);
+}

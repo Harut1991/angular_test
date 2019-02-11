@@ -1,0 +1,53 @@
+<div class="box-top">
+            <span class="abs-box-buttons">
+              <i class="icon-edit font-lg" *ngIf="canEditSample(sample.status)" (click)="editSample(sample.id)"></i>
+              <i class="icon-remove ml-2" (click)="deleteSample(sample.id, sample.name)"></i>
+            </span>
+  <h3 #name
+      class="box-title ellipsis mt-2"
+      [matTooltipPosition]="'above'"
+      matTooltip="{{ sample.name }}"
+      [matTooltipDisabled]="isTooltipShown(name)">{{ sample.name }}</h3>
+  <p class="font-sm mt-1 ellipsis">Sample Name</p>
+
+  <div class="mt-6">
+    <p class="w-600 color-highlight ellipsis font-sm"
+       #link
+       [matTooltipPosition]="'above'"
+       matTooltip="{{ sample.link }}"
+       [matTooltipDisabled]="isTooltipShown(link)">{{ sample.link | emptyFormat }}</p>
+    <p class="font-sm ellipsis">Repository</p>
+  </div>
+
+  <div class="right-fix-xs d-sm-flex justify-space-between  pt-6">
+    <div class="left">
+      <p class="w-600 color-highlight ellipsis">{{ priority }}</p>
+      <p class="font-sm ellipsis">Priority</p>
+    </div>
+     <div class="right text-center" *ngIf="isSampleCompleted(sample.status)">
+       <!--if issues is 0 , add empty class to rounded-count-->
+       <!--<span class="rounded-count" [ngClass]="{ 'empty': issues_count === 0}">{{issues_count}}</span>
+       <p class="font-sm mt-1">Issues Found</p>-->
+       <button class="rounded-btn" (click)="downloadReview()">
+         <i class="icon-download"></i>
+       </button>
+     </div>
+  </div>
+  <div class="mt-6" *ngIf="isSampleCompleted(sample.status)">
+    <p class="w-600 color-highlight ellipsis font-sm">{{ sample.price | emptyFormat }}$</p>
+    <p class="w-600 color-highlight ellipsis font-sm">{{ sample.paid | paid }}</p>
+  </div>
+</div>
+
+<div class="box-footer right-fix-xs d-sm-flex justify-space-between d-flex align-center">
+  <div class="left">
+    <p class="w-600 color-highlight">{{sample.due_date | dateFormat}}</p>
+    <p class="font-sm">Due Date</p>
+  </div>
+  <div class="right text-sm-right pt-1">
+    <!--'tertiary' class for 'completed' status-->
+    <!--'in-review' class for 'in review' status-->
+    <!--'to-do' class for 'to do' status-->
+    <span class="btn-radius-lg tag" [ngClass]="getClass(sample.status)">{{ sample.status | status }}</span>
+  </div>
+</div>

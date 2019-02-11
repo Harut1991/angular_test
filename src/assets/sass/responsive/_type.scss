@@ -1,0 +1,16 @@
+@media (max-width: $screen-xs-max) {
+	h1, .h1-style {
+		font-size: $font-size-h3;
+		text-align: center;
+	}
+
+	h2, .h2-style {
+		font-size: $font-size-lg-x;
+		text-align: center;
+	}
+
+	h3, .h3-style {
+		font-size: $font-size-lg;
+		text-align: center;
+	}
+}

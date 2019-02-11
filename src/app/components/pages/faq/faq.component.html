@@ -1,0 +1,75 @@
+<div class="faq-contetnt">
+  <!-- FAQ head -->
+  <div class="faq-head bg-highlight text-center pt-4 pb-4 no-shrink">
+    <h1 class="color-white unset">FAQs</h1>
+  </div>
+  <!-- end FAQ head -->
+
+  <!-- search -->
+  <div class="border-b-2 no-shrink">
+    <div class="container">
+      <div class="search-input">
+        <input type="text" [(ngModel)]="searchQuery" (change)="searchFaq()" placeholder="Search"
+               class="width-full border-none">
+      </div>
+    </div>
+  </div>
+  <!-- end search -->
+
+  <!-- question list -->
+  <section class="section-padding-sm questions">
+    <div class="container">
+      <div class="question-list">
+        <div class="mb-7 clear-after avoid-break"
+             *ngFor="let question of questions | paginate: { itemsPerPage: limit, currentPage: page, totalItems: totalItems }; let i = index">
+          <h4 class="pb-3">Q: {{ question.question }}</h4>
+          <p class="answer">
+            <span class="w-600">A: </span>
+            <span #readmore class="text-justify" appEllipsis data-max-height="73"
+                  [innerHTML]="question.answer | safeHtml"></span>
+          </p>
+          <p class="read-more pt-2"><a [hidden]="isReadMoreHidden(readmore, question.answer)" href="#question-popup"
+                                       (click)="initPopupText(i)"
+                                       class="btn-link float-right" data-effect="mfp-move-horizontal" appPopup>read
+            more</a></p>
+        </div>
+      </div>
+
+      <div class="text-center pt-6 pb-6" *ngIf="questions.length === 0">
+        <p class="w-900 color-text">
+          There are no results for your search.
+        </p>
+      </div>
+
+      <pagination-controls class="pagination" previousLabel="" nextLabel="" (pageChange)="changeQueryParams($event)"
+                           *ngIf="questions.length !== 0"></pagination-controls>
+    </div>
+  </section>
+  <!-- end question list -->
+  <!-- inquiry -->
+  <section class="bg-primary section-padding-xs no-shrink">
+    <div class="container cols-sm-2 align-center">
+      <div class="col-sm-8">
+        <h3 class="color-white">Didn't find what you were looking for?</h3>
+      </div>
+      <div class="col-sm-4 text-right inquiry-btn">
+        <button routerLink="/contact-us" type="submit" class="btn btn-bordered-white">Send Inquiry</button>
+      </div>
+    </div>
+  </section>
+  <!-- end inquiry -->
+</div>
+
+
+<!-- question popup -->
+<div id="question-popup" class="popup mfp-with-anim mfp-hide">
+  <!-- <button type="button" class="mfp-close"><i class="icon-close"></i></button> -->
+  <button title="Close (Esc)" type="button" class="mfp-close"></button>
+  <div class="popup-body question">
+    <h4 class="pb-5">Q: {{popupQuestion}}</h4>
+    <span class="w-600">A: </span>
+    <p class="text-justify" data-simplebar data-simplebar-auto-hide="false" [innerHTML]="popupAnswer | safeHtml"></p>
+  </div>
+</div>
+
+<!-- end question popup -->

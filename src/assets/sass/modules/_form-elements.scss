@@ -1,0 +1,261 @@
+.form-row {
+  margin-bottom: 20px;
+  position: relative;
+  &:not(.select-row){
+    z-index: 2;
+    > label {
+      z-index: 0;
+    }
+  }
+  input, textarea {
+    border: none;
+    border-bottom: 2px solid $color-light;
+    font-family: $font-primary;
+    font-weight: 600;
+    font-size: $font-size-base;
+    line-height: 20px;
+    color: $color-highlight;
+    width: 100%;
+    padding: 7px 0;
+    position: relative;
+    margin-top: 16px;
+    border-radius: 0;
+    background: none;
+    z-index: 1;
+    &:focus {
+      border-color: $color-primary;
+    }
+    &:focus + label {
+      color: $color-primary;
+    }
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active  {
+    -webkit-text-fill-color: $color-highlight !important;
+  }
+  textarea {
+    padding: 7px;
+    resize: none;
+    border: 2px solid $color-light;
+    border-radius: $br-default;
+    margin-top: 25px;
+
+    & + label {
+      &.shown {
+        font-size: $font-size-base;
+      }
+    }
+  }
+  > label {
+    color: $color-gray-light;
+    font-weight: 700;
+    font-size: $font-size-base;
+    @include pos-abs($top: 25px, $left: 0);
+    @include transition(.3s ease);
+    &.shown {
+      font-size: $font-size-sm;
+      top: 0;
+    }
+  }
+  .error-msg {
+    display: none;
+    margin-top: 8px !important;
+    text-align: left !important;
+    font-size: $font-size-xs !important;
+    color: $color-warning !important;
+  }
+  &.has-error {
+    .error-msg {
+      display: block;
+    }
+    input,
+    textarea {
+      border-color: $color-warning !important;
+    }
+    > label {
+      color: $color-warning !important;
+    }
+  }
+  &.textarea-row {
+    > label {
+      left: 9px;
+      top: 34px;
+      &.shown {
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+  &.select-row {
+    text-align: left;
+    > label {
+      z-index: 4;
+    }
+  }
+  &-light {
+    input, textarea {
+      color: $color-white;
+      border-color: rgba($color-white, 0.7);
+      &:focus {
+        border-color: $color-white;
+      }
+      &:focus + label {
+        color: $color-white;
+      }
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus, 
+    input:-webkit-autofill:active  {
+      -webkit-text-fill-color: $color-white !important;
+    }
+
+    textarea {
+      border-color: rgba($color-white, 0.7);
+    }
+    > label {
+      color: rgba($color-white, 0.7);
+    }
+    .error-msg {
+      color: rgba($color-white, 0.5) !important;
+    }
+    &.has-error {
+      input,
+      textarea {
+        border-color: rgba($color-white, 0.5) !important;
+      }
+      > label {
+        color: rgba($color-white, 0.5) !important;
+      }
+    }
+  }
+}
+
+.error-text {
+  text-align: left !important;
+  font-size: $font-size-base !important;
+  color: $color-warning !important;
+  margin-top: 30px;
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
+.upload-files {
+  &.has-error {
+    .drag-files {
+      border-color: $color-warning !important;
+    }
+    .error-msg {
+      margin-top: 8px !important;
+      text-align: left !important;
+      font-size: $font-size-xs !important;
+      color: $color-warning !important;
+    }
+  }
+}
+
+.drag-files {
+  display: block;
+  font-family: $font-primary;
+  font-weight: 700;
+  font-size: $font-size-base;
+  line-height: 20px;
+  color: $color-highlight;
+  width: 100%;
+  position: relative;
+  border: 2px dashed $color-light;
+  border-radius: $br-default;
+  text-align: center;
+
+  &.small {
+    .label {
+      padding: 15px;
+    }
+    .icon-upload {
+      display: inline-block;
+      margin-bottom: 0;
+      margin-right: 5px;
+      font-size: 16px;
+    }
+  }
+
+  [type=file] {
+    display: none;
+  }
+  label {
+    padding: 30px 15px;
+    display: block;
+    cursor: pointer;
+  }
+  .icon-upload {
+    display: block;
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: $color-primary;
+  }
+}
+
+.list-files {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  ul {
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+  }
+  li {
+    border: 1px solid rgba($color-highlight, 0.1);
+    border-radius: $br-default;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    width: 48%;
+    position: relative;
+    @include flexbox;
+    @include align-items(center);
+  }
+  .icon-file {
+    margin-right: 10px;
+    font-size: 25px;
+    color: rgba($color-highlight, 0.2);
+  }
+  .file-info {
+    width: calc(100% - 55px);
+    position: relative;
+    text-align: left;
+  }
+  .file-name {
+    color: $color-text;
+    font-size: 14px;
+    font-weight: 600;
+    @include ellipsis(100%);
+  }
+  .file-size {
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 400;
+  }
+  button {
+    background: transparent;
+    outline: none;
+    border: none;
+    padding: 5px;
+    font-size: 11px;
+    cursor: pointer;
+    color: $color-text;
+    font-weight: 600;
+    @include pos-abs($top: 5px, $right: 5px);
+    @include transition(0.3s);
+    &:after {
+      content: unicode($icon-close);
+      font-family: $font-icons !important;
+    }
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

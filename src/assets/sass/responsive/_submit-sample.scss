@@ -1,0 +1,17 @@
+@media (max-width: $screen-xs-max) {
+	.sample-dropdowns {
+		@include flex-wrap(wrap);
+
+		> div {
+			width: 100%;
+		}
+
+		.select-row {
+			margin-left: 0;
+		}
+	}
+
+  .rounded-btn {
+    margin-top: 15px;
+  }
+}

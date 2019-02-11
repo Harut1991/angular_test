@@ -1,0 +1,84 @@
+//paths
+$fonts_folder: "../fonts";
+$images_folder: '../images/';
+
+//fonts
+$font-primary: "Work Sans", serif;
+$font-secondary: "Ultra", serif;
+$font-icons: "icomoon-code-review";
+
+//grids
+$grid-cols-count: 12;
+$grid-spacing: 20px;
+
+//color usage
+$color-white: #ffffff;
+$color-white-light: rgba($color-white, 0.5);
+$color-primary: #0796dd;
+$color-primary-light: rgb(121, 206, 248);
+$color-secondary: #003581;
+$color-highlight: #1e272e;
+$color-tertiary: #31B67F;
+$color-text: rgba(#1e272e, 0.7);
+$color-gray: rgba(#1e272e, 0.7);
+$color-gray-light: rgba(#1e272e, 0.5);
+$color-light: rgba(#1e272e, 0.3);
+$color-extralight: rgba(#1e272e, 0.1);
+$color-extra-lightest: rgba(#1e272e, 0.05);
+$color-warning: #dc5c5c;
+$color-warning-bg: #E2424E;
+$color-light-bg: #f4f6f6;
+$color-orange: orange;
+
+//font sizes
+$font-size-h1: 32px;
+$font-size-h2: 30px;
+$font-size-h3: 22px;
+$font-size-h4: 18px;
+$font-size-h5: 16px;
+$font-size-h6: 14px;
+
+$font-size-xl: 24px;
+$font-size-lg-x: 22px;
+$font-size-lg: 20px;
+$font-size-lg-s: 18px;
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-xs: 12px;
+
+//border radiuss
+$br-default: 4px;
+$br-md: 8px;
+$br-md-x: 10px;
+$br-lg: 30px;
+$br-rounded: 50%;
+$br-none: 0;
+
+// transitions
+$trns-duration: .3s;
+$trns-duration-lg: 1s;
+$trns-delay: 50ms;
+
+//container
+$cont-width: 1280px;
+$cont-padding: 69px;
+$cont-padding-md: 20px;
+
+//resolutions
+$screen-lg-x: 1500px;
+$screen-lg: 1280px;
+$screen-lg-s: 1180px;
+$screen-md: 1024px;
+$screen-md-s: 860px;
+$screen-sm: 768px;
+$screen-xs: 480px;
+$screen-xxs: 360px;
+
+//resolutions max-width
+$screen-lg-max: $screen-lg-x - 1;
+$screen-lg-s-max: $screen-lg - 1;
+$screen-md-max: $screen-lg-s - 1;
+$screen-md-s-max: $screen-md - 1;
+$screen-sm-max: $screen-md-s - 1;
+$screen-xs-max: $screen-sm - 1;
+$screen-xxs-max: $screen-xs - 1;

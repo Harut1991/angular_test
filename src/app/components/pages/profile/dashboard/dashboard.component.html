@@ -1,0 +1,46 @@
+<!--<div class="with-left-sidebar">-->
+<!--<aside app-sidebar class="sidebar"></aside>-->
+
+<section class="page-content under-bg-light section-padding-sm">
+  <div class="full-container">
+    <div class="d-flex justify-space-between align-center mb-3 dashboard-header">
+      <ul class="nav-menu font-lg-s nav-hr color-gray-light mr-0">
+        <li class="ml-0"><a [ngClass]="{'active': status === 'not_started'}" (click)="goToPendingReviews()">PENDING
+          REVIEWS</a></li>
+        <li><a [ngClass]="{'active': status === 'in_process'}" (click)="goToCodesInReviews()">ON REVIEW</a></li>
+        <li><a [ngClass]="{'active': status === 'finished'}" (click)="goToCompletedReviews()">COMPLETED REVIEWS</a></li>
+      </ul>
+      <a routerLink="/submit-sample" class="sample-btn btn btn-xs btn-primary">submit
+        sample</a>
+    </div>
+
+
+    <ul class="boxes cols-lg-x-4 cols-lg-3 cols-lg-s-2 cols-md-1 w-500 cols-mb-4">
+      <li class="col box"
+          *ngFor="let sample of samples | paginate: { itemsPerPage: limit, currentPage: page, totalItems: totalItems }">
+        <div app-sample [sample]="sample" [priorities]="priorities" (sampleDeleted)="updateSamples($event)"></div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="text-center pt-6 pb-6" *ngIf="samples.length === 0">
+    <p class="w-900 color-text">
+      There are no reviews.
+    </p>
+  </div>
+  <pagination-controls *ngIf="samples.length !==0" (pageChange)="changeQueryParams($event)" class="pagination" previousLabel=""
+                       nextLabel=""></pagination-controls>
+</section>
+<!--</div>-->
+
+<div id="delete-sample-submition" class="popup cancel-upload-popup md mfp-with-anim mfp-hide">
+  <button title="Close (Esc)" type="button" class="mfp-close"></button>
+  <div class="popup-body">
+    <h4 class="mb-5">Delete Sample</h4>
+    <h6>Are you sure you want to delete the sample - "{{sampleNameForDelete}}"?</h6>
+    <div class="d-flex justify-end mt-10 popup-buttons">
+      <button class="btn btn-bordered btn-xs mr-3" (click)="deleteSample()">DELETE</button>
+      <button class="btn btn-primary btn-xs" (click)="cancelDelete()">CANCEL</button>
+    </div>
+  </div>
+</div>

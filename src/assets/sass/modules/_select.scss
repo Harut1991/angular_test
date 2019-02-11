@@ -1,0 +1,103 @@
+.sample-page {
+  .ng-select {
+    padding-bottom: 0;
+
+    &.ng-select-single {
+      .ng-select-container {
+        .ng-arrow-wrapper {
+          display: none;
+        }
+
+        &:after {
+          border-bottom: 2px solid $color-light;
+        }
+      }
+
+      .ng-value-container {
+        .ng-input {
+          bottom: 0;
+
+          &:after {
+            content: $icon-arrow-down;
+            font-family: $font-icons;
+            position: absolute;
+            font-size: 12px;
+            color: $color-gray-light;
+            bottom: 7px;
+            right: 10px;
+            @include transition(.3s ease);
+          }
+
+          > input {
+            border: none;
+            font-family: $font-primary;
+            font-weight: 600;
+            font-size: $font-size-base;
+            line-height: 20px;
+            color: $color-highlight;
+            width: 100%;
+            padding: 7px 0;
+            position: relative;
+            margin-top: 16px;
+            border-radius: 0;
+            background: none;
+            z-index: 3;
+
+            &:focus {
+              border-bottom-color: $color-primary !important;
+            }
+          }
+        }
+
+        .ng-value-label.ng-star-inserted {
+          font-family: $font-primary;
+          font-weight: 600;
+          font-size: $font-size-base;
+          line-height: 23px;
+          color: $color-highlight;
+          padding-bottom: 11px;
+        }
+      }
+
+      .ng-dropdown-panel {
+        &.ng-select-bottom {
+          top: 100%;
+        }
+
+        &.ng-select-top {
+          bottom: 100%;
+        }
+
+        .ng-dropdown-panel-items {
+          .ng-option {
+            &.ng-option-selected {
+              color: $color-primary;
+            }
+          }
+        }
+      }
+    }
+
+    &.ng-select-focused {
+      + .shown {
+        color: $color-primary;
+      }
+
+      &.ng-select-single {
+        .ng-select-container {
+            &:after {
+              border-bottom-color: $color-primary;
+            }
+        }
+        .ng-value-container {
+          .ng-input {
+            &:after {
+              @include rotate(180);
+              margin-top: -10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

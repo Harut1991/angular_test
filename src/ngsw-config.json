@@ -1,0 +1,73 @@
+{
+  "index": "/index.html",
+  "assetGroups": [
+    {
+    "name": "app",
+    "installMode": "prefetch",
+    "updateMode": "prefetch",
+    "resources": {
+      "files": [
+        "/favicon.ico",
+        "/index.html",
+        "/polyfills.js",
+        "src/serverDate.js",
+        "assets/images/**",
+        "node_modules/jquery/dist/jquery.min.js",
+        "node_modules/simplebar/dist/simplebar.js",
+        "node_modules/slick-carousel/slick/slick.min.js"
+      ]
+    }
+  }, {
+    "name": "assets",
+    "installMode": "prefetch",
+    "updateMode": "prefetch",
+    "resources": {
+      "files": [
+        "/assets/images/**",
+        "/assets/images/svg/logo.svg",
+        "/assets/images/logo-white.png",
+        "/assets/images/how-it-works.png"
+      ]
+    }
+  }],
+  "dataGroups": [
+    {
+      "name": "api-sample",
+      "urls": ["/submit-sample"],
+      "cacheConfig": {
+        "maxSize": 0,
+        "maxAge": "0u",
+        "strategy": "freshness"
+      }
+    },
+    {
+      "name": "api-sample",
+      "urls": ["**/attachments"],
+      "cacheConfig": {
+        "maxSize": 0,
+        "maxAge": "0u",
+        "strategy": "freshness"
+      }
+    },
+    {
+      "name": "api",
+      "urls": [
+        "/api/**"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 0,
+        "maxAge": "0u"
+      }
+    },
+    {
+      "name": "api-performance",
+      "urls": ["/faq"],
+      "cacheConfig": {
+        "maxSize": 20,
+        "maxAge": "2d",
+        "strategy": "performance"
+      }
+    }
+  ]
+}

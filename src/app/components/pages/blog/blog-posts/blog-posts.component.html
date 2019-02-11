@@ -1,0 +1,27 @@
+<section class="blog-page">
+  <h1 class="text-center">blog</h1>
+  <p class="subtitle">Explore new trends, learn the best practices and share your experience with others. Help others
+    achieve more</p>
+  <div class="container cols-sm-2 cols-lg-s-3 blogs">
+    <div class="col"
+         *ngFor="let post of blogPosts | paginate: { itemsPerPage: limit, currentPage: page, totalItems: totalItems }">
+      <div class="blog-item">
+        <img [src]="post?.image ? post.image : '../../../../../assets/images/sliders/blog-1.png'" alt="">
+        <h5 class="blog-title">{{post.title | emptyFormat}}</h5>
+        <!--<p class="author">by: {{post.author | emptyFormat}}</p>-->
+        <p class="text" appEllipsis data-max-height="73" [innerHTML]="post.description | safeHtml"></p>
+        <p class="clear-after"><span class="date">{{post.date | dateFormat}}</span> <a [routerLink]="['/blog/post', post.id]"
+                                                                          class="btn-link float-right">read
+          more</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center pt-6 pb-6" *ngIf="blogPosts.length === 0">
+    <p class="w-900 color-text">
+      There are no blog posts.
+    </p>
+  </div>
+  <pagination-controls class="pagination" previousLabel="" nextLabel="" (pageChange)="changeQueryParams($event)"
+                       *ngIf="blogPosts.length !== 0"></pagination-controls>
+</section>

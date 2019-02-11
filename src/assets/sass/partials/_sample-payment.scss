@@ -1,0 +1,71 @@
+.pay {
+  padding: 50px;
+}
+
+.payment-box {
+  ul.payment-list {
+    li {
+      position: relative;
+      padding-left: 35px;
+      padding-right: 15px;
+
+      label {
+        @include flexbox;
+        @include justify-content(space-between);
+        @include align-items(center);
+        border-bottom: 1px solid $color-extralight;
+        padding: 15px 5px 10px 5px;
+        cursor: pointer;
+
+        .subtitle {
+          font-size: 14px;
+          color: $color-light;
+        }
+
+        .price {
+          font-size: 16px;
+          font-family: $font-primary;
+          font-weight: 900;
+          color: $color-highlight;
+        }
+
+        &:after {
+          content: '';
+          font-family: $font-icons;
+          position: absolute;
+          width: 25px;
+          height: 25px;
+          border: 2px solid rgba(30, 39, 46, 0.1);
+          border-radius: 50%;
+          left: 0;
+          top: 50%;
+          @include animation(all 2s ease);
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+          font-size: 9px;
+          text-align: center;
+          line-height: 21px;
+        }
+      }
+    }
+
+    input:checked + label {
+      &:after {
+        content: $icon-check;
+        border-color: $color-primary;
+        color: $color-primary;
+      }
+    }
+  }
+
+  .btn i {
+    font-size: 10px;
+    margin-left: 8px;
+  }
+}
+
+.total {
+  font-family: $font-primary;
+  font-weight: 900;
+  color: $color-highlight;
+}

@@ -1,0 +1,98 @@
+.mat-form-field-underline {
+  border-bottom: 2px solid $color-light;
+  background: none;
+  height: 0;
+  .mat-form-field-ripple {
+    background-color: $color-primary;
+    transform: none;
+  }
+  .mat-form-field-appearance-legacy & {
+    background: none;
+  }
+}
+
+.mat-form-field-prefix, .mat-form-field-suffix {
+  .mat-datepicker-toggle {
+    height: 28px;
+    display: block;
+  }
+}
+
+.mat-form-field {
+  width: 100%;
+
+  input {
+    padding-right: 40px;
+  }
+  .mat-form-field-flex {
+    align-items: flex-end;
+  }
+  &.mat-input-container, .mat-form-field-wrapper {
+    display: block;
+    .mat-input-element {
+      font-family: $font-primary;
+      font-weight: 700;
+      font-size: $font-size-base;
+      line-height: 20px;
+      color: $color-highlight;
+      border-bottom: 0;
+    }
+    .mat-form-field-label {
+      font-family: $font-primary;
+      color: $color-gray-light;
+      font-weight: 700;
+      font-size: $font-size-base;
+      top: 25px;
+      @include transition(.3s ease);
+    }
+  }
+  &.mat-form-field-can-float {
+    &.mat-form-field-should-float {
+      .mat-form-field-label {
+        top: 0;
+        color: $color-primary;
+        width: 100%;
+        font-size: $font-size-sm;
+        @include transition(.3s ease);
+        @include transform(none);
+      }
+    }
+  }
+  .mat-form-field-infix {
+    border-top: 0;
+    padding: 0;
+    line-height: 20px;
+
+    .mat-input-element {
+      border-bottom: 0;
+      padding-bottom: 10px;
+    }
+  }
+  .mat-form-field-label-wrapper {
+    top: 0;
+    padding: 0;
+  }
+  &.mat-focused {
+    .mat-form-field-ripple {
+      background-color: $color-primary;
+    }
+  }
+}
+
+.mat-datepicker-content {
+  .mat-calendar-body-selected {
+    background-color: $color-primary;
+  }
+}
+
+.mat-form-field-subscript-wrapper {
+  margin-top: 0 !important;
+}
+
+.mat-form-field-suffix {
+  margin-right: 10px;
+}
+
+.mat-datepicker-toggle-active {
+  color: $color-primary;
+}

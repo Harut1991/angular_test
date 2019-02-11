@@ -1,0 +1,51 @@
+{
+  "name": "Kodeist",
+  "short_name": "Kodeist",
+  "description": "LET US DO YOUR CODE REVIEW",
+  "icons": [
+    {
+    "src": "assets/images/manifest/Kodeist_Symbol_Only_RGB-01_128x128.png",
+    "sizes": "128x128",
+    "type": "image/png"
+    },
+    {
+      "src": "assets/images/manifest/Kodeist_Symbol_Only_RGB-01_152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/manifest/Kodeist_Symbol_Only_RGB-01_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/manifest/Kodeist_Symbol_Only_RGB-01_256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/manifest/Kodeist_Symbol_Only_RGB-01_320x320.png",
+      "sizes": "320x320",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/manifest/Kodeist_Symbol_Only_RGB-01_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/manifest/Kodeist_Symbol_Only_RGB-01_768x768.png",
+      "sizes": "768x768",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/manifest/Kodeist_Symbol_Only_RGB-01_1024x1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0796DD",
+  "theme_color": "#0796DD"
+}

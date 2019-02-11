@@ -1,0 +1,165 @@
+@media(max-width: $screen-lg-s-max) {
+  .home-page-blog {
+    .blog-slider {
+      padding-right: 20px;
+      padding-left: 20px;
+
+      .slick-btn {
+        &.slick-btn-prev {
+          left: -10px;
+        }
+
+        &.slick-btn-next {
+          right: -10px;
+        }
+      }
+    }
+  }
+
+  .single-blog-page {
+    h1 {
+      font-size: 28px;
+      line-height: 42px;
+    }
+  }
+}
+
+@media (max-width: $screen-md-s-max) {
+  .single-blog-page {
+    h1 {
+      font-size: 24px;
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 36px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    h4 {
+      font-size: 16px;
+    }
+
+    .info {
+      padding-right: 0;
+    }
+
+    .blog-img {
+      text-align: center;
+    }
+
+    .details {
+      text-align: center;
+      margin: 15px 0 30px;
+
+      .author {
+        padding-right: 15px;
+        font-size: 14px;
+      }
+
+      .date {
+        margin-top: 0;
+        display: inline-block;
+        color: $color-text;
+        font-size: 14px;
+        padding-left: 15px;
+        border-left: 0.5px solid $color-extralight;
+
+      }
+    }
+
+    .blog-slider {
+      padding-bottom: 30px;
+    }
+
+    .slick-dots {
+      display: block;
+      bottom: -30px;
+    }
+
+    .description {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .tags {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .single-blog-page {
+    .blog-img {
+      text-align: center;
+    }
+
+    .info {
+      padding-right: 0;
+      max-width: 600px;
+      margin: 0 auto;
+
+      h3 {
+        text-align: left;
+      }
+    }
+
+    .sharing {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+    .blog-slider {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+}
+
+@media (max-width: $screen-xxs-max) {
+  .home-page-blog {
+    .blog-slider {
+      padding-bottom: 30px;
+      padding-right: 0;
+      padding-left: 0;
+
+      .slick-btn {
+        &.slick-btn-prev, &.slick-btn-next {
+          display: none;
+        }
+      }
+
+      .slick-dots {
+        bottom: -30px;
+      }
+    }
+  }
+
+  .blogs {
+    .blog-item {
+      .text {
+        font-size: 14px;
+      }
+
+      .date, .author {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .single-blog-page {
+    .sharing {
+      .social {
+        @include flex-wrap(wrap);
+
+        li {
+          width: 50%;
+          margin: 0 0 30px 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

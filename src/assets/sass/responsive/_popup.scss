@@ -1,0 +1,43 @@
+@media (max-width: $screen-xs-max) {
+  .popup {
+    padding: 40px 30px 30px;
+  }
+
+  .mfp-container {
+    padding: 0 8px;
+
+    .mfp-close {
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+@media (max-width: $screen-xxs-max) {
+  .popup.cancel-upload-popup.md {
+    padding: 50px 20px 30px;
+  }
+
+  .box-section-button {
+    text-align: center;
+  }
+}
+
+@media (max-width: 516px) {
+  .uploading-popup {
+    right: 20px;
+    width: 280px;
+
+    .uploading-popup-content {
+      .uploading-elements {
+        padding-left: 15px;
+
+        li {
+          .progress {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<!-- contact-us section -->
+<section class="section-bg section-padding-sm">
+  <div class="container cols-sm-2 justify-center">
+    <div class="col-md-s-8 col-sm-7 m-0 br-lg bg-white border register-form">
+      <div class="register-form-content">
+        <h3>Contact us</h3>
+        <form [formGroup]="form" novalidate (ngSubmit)="submitForm(form.value)">
+          <div class="form-row" toggleErrClass [formControlElement]="form.get('user_name')">
+            <input formControlName="user_name" type="text" id="name" appFocus [labelId]="'name-label'"/>
+            <label for="name" id="name-label">Your Name</label>
+            <div class="error-msg" *ngFor="let error of validationMessages.name">
+              <p *ngIf="form.get('user_name').hasError(error.type)" >{{error.message}}</p>
+            </div>
+          </div>
+          <div class="form-row" toggleErrClass [formControlElement]="form.get('email')">
+            <input formControlName="email" type="email" id="email" appFocus [labelId]="'email-label'"/>
+            <label for="email" id="email-label">Your Email</label>
+            <div class="error-msg" *ngFor="let error of validationMessages.email">
+              <p *ngIf="form.get('email').hasError(error.type)" >{{error.message}}</p>
+            </div>
+          </div>
+          <div class="form-row textarea-row mt-9" toggleErrClass [formControlElement]="form.get('description')">
+            <textarea maxlength="2000" formControlName="description" id="code-description" rows="7" ></textarea>
+            <label for="code-description" class="shown">Tell us what is your issue</label>
+            <div class="error-msg" *ngFor="let error of validationMessages.description">
+              <p *ngIf="form.get('description').hasError(error.type)" >{{error.message}}</p>
+            </div>
+          </div>
+          <!-- TODO - remove .btn-bordered and add .btn-primary if one of above inputs has value -->
+          <button type="submit" class="btn mt-3" [ngClass]="{'btn-bordered': !form.valid, 'btn-primary': form.valid}">submit</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- contact-us section -->

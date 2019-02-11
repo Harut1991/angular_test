@@ -1,0 +1,30 @@
+@media (max-width: $screen-lg-s-max) {
+  .section-padding {
+  	padding-top: 60px;
+  	padding-bottom: 60px;
+  }
+}
+
+@media (max-width: $screen-md-s-max) {
+	.width-lg {
+		width: 100%;
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+  .section-padding {
+  	padding-top: 30px;
+  	padding-bottom: 30px;
+    &-sm {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+  .register-form-content {
+    .list-files {
+      li {
+        padding: 10px;
+      }
+    }
+  }
+}

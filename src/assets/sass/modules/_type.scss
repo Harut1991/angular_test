@@ -1,0 +1,54 @@
+h1, .h1-style {
+  font-size: $font-size-h1;
+  font-family: $font-secondary;
+  font-weight: 400;
+
+  &:not(.unset) {
+    text-transform: uppercase;
+  }
+}
+h2, .h2-style {
+  font-size: $font-size-h2;
+  font-family: $font-primary;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: $color-highlight;
+}
+h3, .h3-style {
+  font-size: $font-size-h3;
+  font-family: $font-primary;
+  font-weight: 900;
+  color: $color-highlight;
+
+  &:not(.unset) {
+    text-transform: uppercase;
+  }
+}
+h4, .h4-style {
+  font-size: $font-size-h4;
+  font-family: $font-primary;
+  font-weight: 900;
+  color: $color-highlight;
+  &.title {
+    font-family: $font-secondary;
+    font-weight: normal;
+    text-transform: none;
+  }
+  &:not(.unset) {
+    text-transform: uppercase;
+  }
+}
+h5, .h5-style {
+  font-size: $font-size-h5;
+  font-family: $font-primary;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: $color-highlight;
+}
+
+h6, .h6-style {
+  font-size: $font-size-h6;
+  font-family: $font-primary;
+  font-weight: 600;
+  color: rgba($color-highlight,0.3);
+}

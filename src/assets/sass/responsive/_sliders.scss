@@ -1,0 +1,33 @@
+@media (max-width: $screen-md-max) {
+	.slider-frame {
+		padding-top: 10px;
+		padding-bottom: 38px;
+	}
+}
+
+@media (max-width: $screen-md-s-max) {
+	.slider-frame {
+		padding-bottom: 30px;
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.slider-frame {
+		padding-bottom: 20px;
+
+		&:before {
+			width: 100%;
+		}
+
+		.slick-slider {
+			width: 70%;
+			margin: 0 auto;
+		}
+	}
+}
+
+@media (max-width: $screen-xxs-max) {
+	.slider-frame {
+		padding-top: 5px;
+	}
+}

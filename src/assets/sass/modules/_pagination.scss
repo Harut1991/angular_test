@@ -1,0 +1,38 @@
+.pagination {
+	.ngx-pagination {
+		margin-bottom: 0 !important;
+		text-align: center !important;
+	}
+
+	a, button {
+		color: $color-text !important;
+		&:hover {
+			background: $color-extralight !important;
+		}
+	}
+
+	.current {
+		background: $color-primary !important;
+	}
+
+	.disabled {
+		color: $color-light !important;
+	}
+
+	.pagination-next, 
+	.pagination-previous {
+		a span, span {
+				display: none !important;	
+		}
+	}
+
+	.pagination-next a:after, 
+	.pagination-next.disabled:after {
+		margin-left: 0 !important;
+	}
+
+	.pagination-previous a:before, 
+	.pagination-previous.disabled:before {
+		margin-right: 0 !important;
+	}
+}

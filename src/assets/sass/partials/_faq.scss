@@ -1,0 +1,90 @@
+.faq-contetnt {
+  @include flexbox;
+  @include dir-col;
+  min-height: calc(100vh - 374px);
+
+
+
+  .no-shrink {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+  }
+}
+
+.faq-head {
+  h1 {
+    font-size: 30px;
+    font-family: $font-primary;
+    font-weight: 900;
+  }
+}
+
+.search-input {
+  position: relative;
+  &:before {
+    content: unicode($icon-search);
+    font-family: $font-icons;
+    @include centerer($horizontal: false);
+    z-index: 1;
+    left: 0;
+    font-size: 21px;
+    color: $color-light;
+  }
+  input {
+    line-height: 24px;
+    padding: 15px 0 15px 45px;
+    font-weight: 700;
+    border-bottom: 2px solid $color-extralight;
+    height: calc(100% + 2px);
+    margin-bottom: -2px;
+    @include transition(.3s);
+    @include placeholder {
+      opacity: 1;
+      color: $color-light;
+      font-weight: 600;
+    }
+    &:focus {
+      border-color: $color-primary;
+    }
+  }
+}
+
+.questions {
+  flex-grow: 1;
+}
+
+.question-list {
+  @include column($count: 2, $gap: 90px);
+  h4 {
+    font-weight: 700;
+    text-transform: none;
+    min-height: 57px;
+  }
+  p {
+    &.answer {
+      line-height: 24px;
+      min-height: 72px;
+
+      a {
+        color: $color-primary;
+        @include transition(0.3s);
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    &.read-more {
+      min-height: 34px;
+    }
+  }
+}
+
+#question-popup {
+  .question {
+    p {
+      max-height: 500px;
+    }
+  }
+}

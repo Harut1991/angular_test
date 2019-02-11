@@ -1,0 +1,13 @@
+@media (max-width: $screen-sm-max) {
+	.about-us {
+		> div {
+			&:last-child {
+				@include flexbox();
+				@include dir-col-reverse;
+			}
+			p {
+				margin-top: 25px;
+			}
+		}
+	}
+}

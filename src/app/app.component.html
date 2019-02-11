@@ -1,0 +1,8 @@
+<div app-header></div>
+<app-router-loader></app-router-loader>
+<main  class="main" [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+  <router-outlet #o="outlet"></router-outlet>
+</main>
+<app-upload></app-upload>
+<div app-footer></div>
+<div app-chat-widget></div>
