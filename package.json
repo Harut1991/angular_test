@@ -75,7 +75,7 @@
     "concurrently": "^3.5.1",
     "ngx-perfect-scrollbar": "^7.0.0",
     "ngx-highlightjs": "^3.0.0",
-    "highlight.js": "^9.13.1",
+    "highlight.js": "^10.1.2",
     "card": "^2.4.0",
     "ngx-card": "^0.2.4"
   }
